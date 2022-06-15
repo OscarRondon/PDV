@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5549CE5-D7C1-41E9-9CE1-E77D1F69AF24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatosPDV</RootNamespace>
+    <AssemblyName>DatosPDV</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDatos\GarantiaDatos.cs" />
+    <Compile Include="AccesoDatos\AsignacionCajaDatos.cs" />
+    <Compile Include="AccesoDatos\CajaDatos.cs" />
+    <Compile Include="AccesoDatos\FolioDatos.cs" />
+    <Compile Include="AccesoDatos\MenuDatos.cs" />
+    <Compile Include="AccesoDatos\NominaDatos.cs" />
+    <Compile Include="AccesoDatos\NoObjectDatos.cs" />
+    <Compile Include="AccesoDatos\PuntoVentaDatos.cs" />
+    <Compile Include="AccesoDatos\UsuarioDatos.cs" />
+    <Compile Include="ComunDatos.cs" />
+    <Compile Include="Connected Services\SRCaja\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRFolio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRGarantia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRMenu\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRNomina\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRNoObject\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRPerfil\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SRVentas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRCaja\Caja.wsdl" />
+    <None Include="Connected Services\SRCaja\Caja.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRCaja\Caja1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRCaja\Caja2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRCaja\Caja3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRCaja\DatosPDV.SRCaja.AsignacionCajaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRCaja\DatosPDV.SRCaja.CajaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRCaja\DatosPDV.SRCaja.MontoCierreType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRCaja\DatosPDV.SRCaja.RespuestaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\DatosPDV.SRFolio.FolioAnuladoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\DatosPDV.SRFolio.FolioGlobalType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\DatosPDV.SRFolio.FolioSegmentoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\DatosPDV.SRFolio.FolioType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\DatosPDV.SRFolio.RespuestaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRFolio\Folio.wsdl" />
+    <None Include="Connected Services\SRFolio\Folio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRFolio\Folio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRFolio\Folio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRGarantia\DatosPDV.SRGarantia.GarantiaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRGarantia\DatosPDV.SRGarantia.RespuestaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRGarantia\Garantia1.wsdl" />
+    <None Include="Connected Services\SRGarantia\Garantia3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRGarantia\Garantia31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRGarantia\Garantia32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRMenu\DatosPDV.SRMenu.MenuType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRMenu\Menu.wsdl" />
+    <None Include="Connected Services\SRMenu\Menu.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRMenu\Menu1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRMenu\Menu2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNomina\DatosPDV.SRNomina.NominaDetalleType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRNomina\DatosPDV.SRNomina.NominaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRNomina\DatosPDV.SRNomina.RespuestaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRNomina\Nomina.wsdl" />
+    <None Include="Connected Services\SRNomina\Nomina.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNomina\Nomina1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNomina\Nomina2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNoObject\DatosPDV.SRNoObject.NoObjectListType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRNoObject\DatosPDV.SRNoObject.NoObjectType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRNoObject\NoObject.wsdl" />
+    <None Include="Connected Services\SRNoObject\NoObject.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNoObject\NoObject1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRNoObject\NoObject2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRPerfil\DatosPDV.SRPerfil.PerfilType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRPerfil\Perfil.wsdl" />
+    <None Include="Connected Services\SRPerfil\Perfil.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRPerfil\Perfil1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRPerfil\Perfil2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRUsuario\DatosPDV.SRUsuario.UsuarioType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRUsuario\Usuario.wsdl" />
+    <None Include="Connected Services\SRUsuario\Usuario.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRUsuario\Usuario1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRUsuario\Usuario2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRVentas\DatosPDV.SRVentas.DocumentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRVentas\DatosPDV.SRVentas.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRVentas\DatosPDV.SRVentas.ResponseEvent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRVentas\DatosPDV.SRVentas.RespuestaType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRVentas\Ventas.wsdl" />
+    <None Include="Connected Services\SRVentas\Ventas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRVentas\Ventas1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SRVentas\Ventas2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SRCaja\" />
+    <WCFMetadataStorage Include="Connected Services\SRFolio\" />
+    <WCFMetadataStorage Include="Connected Services\SRGarantia\" />
+    <WCFMetadataStorage Include="Connected Services\SRMenu\" />
+    <WCFMetadataStorage Include="Connected Services\SRNomina\" />
+    <WCFMetadataStorage Include="Connected Services\SRNoObject\" />
+    <WCFMetadataStorage Include="Connected Services\SRPerfil\" />
+    <WCFMetadataStorage Include="Connected Services\SRUsuario\" />
+    <WCFMetadataStorage Include="Connected Services\SRVentas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRCaja\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRCaja\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRCaja\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRMenu\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRMenu\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRMenu\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRPerfil\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRPerfil\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRPerfil\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRUsuario\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRUsuario\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNoObject\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNoObject\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNoObject\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comunes\Comunes.csproj">
+      <Project>{456b2ff4-7291-4b0b-b240-d96f75513db0}</Project>
+      <Name>Comunes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntidadesPDV\EntidadesPDV.csproj">
+      <Project>{8776951c-ffba-4cd1-89a2-dce4174e5a8e}</Project>
+      <Name>EntidadesPDV</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRGarantia\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRGarantia\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRGarantia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRCaja\Caja.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRGarantia\Garantia1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRMenu\Menu.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNoObject\NoObject.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRPerfil\Perfil.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRUsuario\Usuario.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRVentas\Ventas.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRVentas\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRVentas\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRVentas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRFolio\Folio.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRFolio\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRFolio\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRFolio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNomina\Nomina.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNomina\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNomina\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SRNomina\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

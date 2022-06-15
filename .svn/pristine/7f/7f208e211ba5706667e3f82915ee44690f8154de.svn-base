@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Folio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFolio_AdministrarLimiteFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarLimiteFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AdministrarLimiteFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarLimiteFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaLimiteFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLimiteFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaLimiteFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaLimiteFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetUltimoLimiteFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoLimiteFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetUltimoLimiteFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoLimiteFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AdministrarFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AdministrarFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AdministrarFolioSegmentoMasivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFolioSegmentoMasivo" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AdministrarFolioSegmentoMasivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarFolioSegmentoMasivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AsignarCajaSegmentoMasivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaSegmentoMasivo" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AsignarCajaSegmentoMasivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaSegmentoMasivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AnularFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AnularFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AutorizarAnulacionFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutorizarAnulacionFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_AutorizarAnulacionFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutorizarAnulacionFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetUltimoFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetUltimoFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFolios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFolios" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFolios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaSegmentosByFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaSegmentosByFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaSegmentosByFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaSegmentosByFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosAnulados_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosAnulados" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosAnulados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosAnuladosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosAnuladosCajaPorSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosAnuladosCajaPorSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosAnuladosCajaPorSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosAnuladosCajaPorSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetSiguienteFolioByCaja_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiguienteFolioByCaja" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetSiguienteFolioByCaja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSiguienteFolioByCajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosCajaByUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosCajaByUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaFoliosCajaByUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaFoliosCajaByUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaGlobalFolio_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaGlobalFolio" />
+  </wsdl:message>
+  <wsdl:message name="IFolio_GetListaGlobalFolio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaGlobalFolioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFolio">
+    <wsdl:operation name="AdministrarLimiteFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AdministrarLimiteFolio" message="tns:IFolio_AdministrarLimiteFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AdministrarLimiteFolioResponse" message="tns:IFolio_AdministrarLimiteFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLimiteFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaLimiteFolio" message="tns:IFolio_GetListaLimiteFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaLimiteFolioResponse" message="tns:IFolio_GetListaLimiteFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoLimiteFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetUltimoLimiteFolio" message="tns:IFolio_GetUltimoLimiteFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetUltimoLimiteFolioResponse" message="tns:IFolio_GetUltimoLimiteFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AdministrarFolio" message="tns:IFolio_AdministrarFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AdministrarFolioResponse" message="tns:IFolio_AdministrarFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFolioSegmentoMasivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AdministrarFolioSegmentoMasivo" message="tns:IFolio_AdministrarFolioSegmentoMasivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AdministrarFolioSegmentoMasivoResponse" message="tns:IFolio_AdministrarFolioSegmentoMasivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaSegmentoMasivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AsignarCajaSegmentoMasivo" message="tns:IFolio_AsignarCajaSegmentoMasivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AsignarCajaSegmentoMasivoResponse" message="tns:IFolio_AsignarCajaSegmentoMasivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AnularFolio" message="tns:IFolio_AnularFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AnularFolioResponse" message="tns:IFolio_AnularFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarAnulacionFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/AutorizarAnulacionFolio" message="tns:IFolio_AutorizarAnulacionFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/AutorizarAnulacionFolioResponse" message="tns:IFolio_AutorizarAnulacionFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetUltimoFolio" message="tns:IFolio_GetUltimoFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetUltimoFolioResponse" message="tns:IFolio_GetUltimoFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFolios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaFolios" message="tns:IFolio_GetListaFolios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosResponse" message="tns:IFolio_GetListaFolios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaSegmentosByFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaSegmentosByFolio" message="tns:IFolio_GetListaSegmentosByFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaSegmentosByFolioResponse" message="tns:IFolio_GetListaSegmentosByFolio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosAnulados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosAnulados" message="tns:IFolio_GetListaFoliosAnulados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosAnuladosResponse" message="tns:IFolio_GetListaFoliosAnulados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosAnuladosCajaPorSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosAnuladosCajaPorSupervisor" message="tns:IFolio_GetListaFoliosAnuladosCajaPorSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosAnuladosCajaPorSupervisorResponse" message="tns:IFolio_GetListaFoliosAnuladosCajaPorSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiguienteFolioByCaja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetSiguienteFolioByCaja" message="tns:IFolio_GetSiguienteFolioByCaja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetSiguienteFolioByCajaResponse" message="tns:IFolio_GetSiguienteFolioByCaja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosCajaByUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosCajaByUsuario" message="tns:IFolio_GetListaFoliosCajaByUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaFoliosCajaByUsuarioResponse" message="tns:IFolio_GetListaFoliosCajaByUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaGlobalFolio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFolio/GetListaGlobalFolio" message="tns:IFolio_GetListaGlobalFolio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFolio/GetListaGlobalFolioResponse" message="tns:IFolio_GetListaGlobalFolio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFolio" type="tns:IFolio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdministrarLimiteFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AdministrarLimiteFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaLimiteFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaLimiteFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoLimiteFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetUltimoLimiteFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AdministrarFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarFolioSegmentoMasivo">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AdministrarFolioSegmentoMasivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaSegmentoMasivo">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AsignarCajaSegmentoMasivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AnularFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarAnulacionFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/AutorizarAnulacionFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetUltimoFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFolios">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaFolios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaSegmentosByFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaSegmentosByFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosAnulados">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaFoliosAnulados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosAnuladosCajaPorSupervisor">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaFoliosAnuladosCajaPorSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiguienteFolioByCaja">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetSiguienteFolioByCaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaFoliosCajaByUsuario">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaFoliosCajaByUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaGlobalFolio">
+      <soap:operation soapAction="http://tempuri.org/IFolio/GetListaGlobalFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Folio">
+    <wsdl:port name="BasicHttpBinding_IFolio" binding="tns:BasicHttpBinding_IFolio">
+      <soap:address location="http://172.16.98.189:1559/Folio/Folio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

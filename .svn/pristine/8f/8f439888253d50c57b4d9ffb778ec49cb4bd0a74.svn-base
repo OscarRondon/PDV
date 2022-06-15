@@ -1,0 +1,123 @@
+﻿@{
+    List<EntidadesPDV.Caja.CajasEnt> listaCajas = new List<EntidadesPDV.Caja.CajasEnt>();
+    if (ViewBag.ListaCajasAsignadas != null)
+    {
+        listaCajas = ViewBag.ListaCajasAsignadas;
+    }
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Folios asociados a la caja</h1>
+        </div>
+        <div class="panel-body">
+            <table id="listaFolios" class="table table-striped table-condensed compact" style="width: 100%">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Caja</th>
+                        <th>Folio inicio</th>
+                        <th>Folio fin</th>
+                        @*<th width="15%">Fecha creación</th>*@
+                        <th style="width: 3%">Acción</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/Shared/Folio/_PartialAnularFolioRango.cshtml")
+
+<script type="text/javascript">
+    var tablaFolio;
+    $(document).ready(function () {
+        FolioAdmisionistaAnular.Init();
+
+        $('#listaFolios').on('click', '.filaGrupo', function () {
+            var currentOrder = tablaFolio.order()[0];
+            if (currentOrder[0] === 0 && currentOrder[1] === 'asc') {
+                tablaFolio.order([0, 'desc']).draw();
+            }
+            else {
+                tablaFolio.order([0, 'asc']).draw();
+            }
+        });
+    });
+    var FolioAdmisionistaAnular = {
+        Init: function () {
+            mLoading.modal();
+            FolioAdmisionistaAnular.BuscarFolios();
+        },
+        BuscarFolios: function () {
+            $.ajax({
+                url: '/Folio/BuscarFolioPorAdmisionista',
+                type: 'GET',
+                cache: false,
+                contentType: 'application/json; charset=utf-8',
+                success: function (respuesta) {
+                    if (respuesta.EsError) {
+                        Mensaje.Alerta(respuesta.Mensaje);
+                    }
+                    else {
+                        FolioAdmisionistaAnular.LoadFolios(respuesta.Data);
+                    }
+                }
+            });
+        },
+        LoadFolios: function (data) {
+            tablaFolio = $('#listaFolios').DataTable({
+                "language": dataTableEspanol,
+                "bFilter": false,
+                "bInfo": true,
+                "bLengthChange": false,
+                "bPaginate": true,
+                "bProcessing": false,
+                "bSort": true,
+                "bDestroy": true,
+                "aaData": data,
+                "order": [[0, 'asc']],
+                "aoColumns":
+                [
+                    { mDataProp: "NombreCaja", bVisible: false },
+                    { mDataProp: "FolioInicial", sType: "numeric", sClass: "text-right" },
+                    { mDataProp: "FolioFinal", sType: "numeric", sClass: "text-right" },
+                    //{ mDataProp: "FechaSegmentoTexto", sType: "date", sClass: "text-center" },
+                    {
+                        sDefaultContent: "",
+                        sClass: "text-center",
+                        bSortable: false,
+                        mRender: function (data, type, row) {
+                            var dataFila = ' data-IdFolio="' + row.IdFolio + '"';
+                            dataFila += ' data-FolioInicial="' + row.FolioInicial + '"';
+                            dataFila += ' data-FolioFinal="' + row.FolioFinal + '"';
+                            dataFila += ' data-IdCaja="' + row.IdCaja + '"';
+                            var btnAnular = '<a ' + dataFila + ' data-anular="3" onclick="AnularFolioRango.AbrirFormulario(this)" style="cursor: pointer; color: red"><span class="glyphicon glyphicon-trash" title="Anular folio"></span></a>';
+
+                            return btnAnular;
+                        }
+                    }
+                ],
+                "drawCallback": function (settings) {
+                    var api = this.api();
+                    var rows = api.rows({ page: 'current' }).nodes();
+                    var last = null;
+
+                    api.column(0, { page: 'current' }).data().each(function (group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before(
+                                '<tr class="group filaGrupo" style="cursor: pointer"><td colspan="4"><strong>' + group + '</strong></td></tr>'
+                            );
+                            last = group;
+                        }
+                    });
+                }
+            });
+        }
+    }
+</script>
+<style>
+    tr.group,
+    tr.group:hover {
+        background-color: #ddd !important;
+    }
+</style>

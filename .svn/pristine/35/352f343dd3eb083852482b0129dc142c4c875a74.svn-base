@@ -1,0 +1,96 @@
+﻿@using EntidadesPDV;
+@{
+    List<ItemList> LstBancos = ViewBag.ListaBancos;
+}
+<div id="ModalNuevaGarantia" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Ingreso Garantía</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="padding-top: 0px; padding-bottom: 0px">
+                    <div class="col-sm-4">
+                        <label class="control-label">Rut paciente:</label>
+                        <input type="text" class="form-control text-right textUpperTrim" id="txtGarantiaPacienteRut" placeholder="Rut" style="max-width: none" readonly maxlength="20" />
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="control-label">Nombre paciente:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaPacienteNombre" placeholder="Nombre" style="max-width: none" readonly maxlength="150" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Comuna paciente:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaPacienteComuna" placeholder="Comuna" style="max-width: none" maxlength="30" readonly />
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="control-label">Dirección (N°/Dpto/Block) paciente:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaPacienteDireccion" placeholder="Dirección" style="max-width: none" maxlength="50" readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">* Rut responsable:</label>
+                        <input type="text" class="form-control text-right textUpperTrim" id="txtGarantiaResponsableRut" placeholder="Rut" style="max-width: none" maxlength="20" />
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="control-label">* Nombre responsable:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaResponsableNombre" placeholder="Nombre" style="max-width: none" maxlength="150" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">* Comuna  responsable:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaResponsableComuna" placeholder="Comuna" style="max-width: none" maxlength="30" />
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="control-label">* Dirección (N°/Dpto/Block) responsable:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtGarantiaResponsableDireccion" placeholder="Dirección" style="max-width: none" maxlength="50" />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-sm-6">
+                        <label class="control-label">* Monto:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                            <input type="text" class="form-control text-right" id="txtGarantiaMonto" maxlength="15" disabled value="0">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">* Medio de Pago:</label><br />
+                        <select class="form-control" id="ddlGarantiaMedioPago" onchange="NuevaGarantia.MostrarOcultarCheque(this.value)">
+                            <option selected="selected" value="">Seleccione medio pago...</option>
+                            <option value="0">Efectivo</option>
+                            <option value="1">Cheque</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px; display:none" id="divGarantiaCheque">
+                    <div class="col-sm-6">
+                        <label class="control-label">* Banco:</label>
+                        <select class="form-control" id="ddlGarantiaBancos">
+                            @if (LstBancos != null && LstBancos.Count > 0)
+                            {
+                                <option value="">Seleccione Banco...</option>
+                                foreach (var item in LstBancos)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">Sin datos...</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">* N° Cheque:</label>
+                        <input type="text" id="txtGarantiaNumeroCheque" placeholder="N° Cheque" class="form-control" onkeyup="PDV.SoloNumero(this)" maxlength="15" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="btn btn-primary btn-sm" id="btnGuardarNuevaGarantia" onclick="NuevaGarantia.GuardarFormulario()">Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" onclick="NuevaGarantia.LimpiarFormularioResponsable()">Limpiar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/HMS/PuntoVenta/NuevaGarantia.js"></script>

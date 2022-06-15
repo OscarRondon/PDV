@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Nomina" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Nomina/Nomina.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Nomina/Nomina.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Nomina/Nomina.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INomina_AdministrarNominaDetalleMasivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarNominaDetalleMasivo" />
+  </wsdl:message>
+  <wsdl:message name="INomina_AdministrarNominaDetalleMasivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarNominaDetalleMasivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GenerarNominaSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarNominaSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GenerarNominaSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarNominaSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetNominaByParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNominaByParam" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetNominaByParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNominaByParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetNominaSupervisorByParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNominaSupervisorByParam" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetNominaSupervisorByParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNominaSupervisorByParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominas" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominasResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominaDetalleAprobados_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominaDetalleAprobados" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominaDetalleAprobados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominaDetalleAprobadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominaSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominaSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="INomina_GetListaNominaSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaNominaSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INomina">
+    <wsdl:operation name="AdministrarNominaDetalleMasivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/AdministrarNominaDetalleMasivo" message="tns:INomina_AdministrarNominaDetalleMasivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/AdministrarNominaDetalleMasivoResponse" message="tns:INomina_AdministrarNominaDetalleMasivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarNominaSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GenerarNominaSupervisor" message="tns:INomina_GenerarNominaSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GenerarNominaSupervisorResponse" message="tns:INomina_GenerarNominaSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNominaByParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GetNominaByParam" message="tns:INomina_GetNominaByParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GetNominaByParamResponse" message="tns:INomina_GetNominaByParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNominaSupervisorByParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GetNominaSupervisorByParam" message="tns:INomina_GetNominaSupervisorByParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GetNominaSupervisorByParamResponse" message="tns:INomina_GetNominaSupervisorByParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominas">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GetListaNominas" message="tns:INomina_GetListaNominas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GetListaNominasResponse" message="tns:INomina_GetListaNominas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominaDetalleAprobados">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GetListaNominaDetalleAprobados" message="tns:INomina_GetListaNominaDetalleAprobados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GetListaNominaDetalleAprobadosResponse" message="tns:INomina_GetListaNominaDetalleAprobados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominaSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/INomina/GetListaNominaSupervisor" message="tns:INomina_GetListaNominaSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INomina/GetListaNominaSupervisorResponse" message="tns:INomina_GetListaNominaSupervisor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INomina" type="tns:INomina">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdministrarNominaDetalleMasivo">
+      <soap:operation soapAction="http://tempuri.org/INomina/AdministrarNominaDetalleMasivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarNominaSupervisor">
+      <soap:operation soapAction="http://tempuri.org/INomina/GenerarNominaSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNominaByParam">
+      <soap:operation soapAction="http://tempuri.org/INomina/GetNominaByParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNominaSupervisorByParam">
+      <soap:operation soapAction="http://tempuri.org/INomina/GetNominaSupervisorByParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominas">
+      <soap:operation soapAction="http://tempuri.org/INomina/GetListaNominas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominaDetalleAprobados">
+      <soap:operation soapAction="http://tempuri.org/INomina/GetListaNominaDetalleAprobados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaNominaSupervisor">
+      <soap:operation soapAction="http://tempuri.org/INomina/GetListaNominaSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Nomina">
+    <wsdl:port name="BasicHttpBinding_INomina" binding="tns:BasicHttpBinding_INomina">
+      <soap:address location="http://172.16.98.189:1559/Nomina/Nomina.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

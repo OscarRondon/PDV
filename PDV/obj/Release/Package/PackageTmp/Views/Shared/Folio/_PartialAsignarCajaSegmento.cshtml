@@ -1,0 +1,62 @@
+﻿@{
+    List<EntidadesPDV.Caja.CajasEnt> lstCajas = new List<EntidadesPDV.Caja.CajasEnt>();
+    if (ViewBag.ListaCajasSupervisor != null)
+    {
+        lstCajas = ViewBag.ListaCajasSupervisor;
+    }
+}
+<script src="~/Scripts/HMS/Folio/AsignarCajaSegmentoModal.js"></script>
+
+<input type="hidden" id="hdnIdFolioAsignar" value="" />
+
+<select id="ddlCajasSupervisor" name="ddlCajasSupervisor" class="form-control" style="display:none; max-width: none; width:100%" onchange="AsignarCajaSegmento.SeleccionarCaja(this)">
+    @if (lstCajas != null && lstCajas.Count > 0)
+    {
+        <option value="">Seleccione...</option>
+        foreach (var item in lstCajas)
+        {
+
+            <option value="@item.IdCaja">@item.IdentificacionCaja</option>
+        }
+    }
+    else
+    {
+        <option value="">Sin datos...</option>
+    }
+</select>
+<div id="modalAsignarCajaSegmento" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Asignar cajas por segmento:</h4>
+            </div>
+            <div class="modal-body">
+                <table id="listaSegmentos" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+                    <thead>
+                        <tr class="bg-info">
+                            <th style="border: 1px solid #ddd !important" rowspan="2">N°</th>
+                            <th style="border: 1px solid #ddd !important; text-align: center" colspan="3">Rango</th>
+                            <th style="border: 1px solid #ddd !important; text-align: center" colspan="4">Folio</th>
+                            <th style="border: 1px solid #ddd !important; width: 60%" rowspan="2">Caja asignada</th>
+                        </tr>
+                        <tr class="bg-info">
+                            <th style="border: 1px solid #ddd !important; width: 5%">Inicio</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Fin</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Actual</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Anulados</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Usados</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Disponibles</th>
+                            <th style="border: 1px solid #ddd !important; width: 5%">Total</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick="AsignarCajaSegmento.ValidarGuardarCajas()">Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

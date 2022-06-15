@@ -1,0 +1,133 @@
+﻿@model EntidadesPDV.Caja.AsignacionCaja
+<input type="hidden" id="AsientoSeleccionadoId" value="" />
+<input type="hidden" id="AsientoSeleccionadoLinea" value="" />
+<input type="hidden" id="SocioNegocioCode" value="" />
+<input type="hidden" id="FolioAsignado" value="" />
+
+<input type="hidden" id="PagoSeleccionadoFila" value="" />
+<input type="hidden" id="PagoSeleccionadoTipo" value="" />
+<input type="hidden" id="BoletaImedAsociado" value="" />
+<input type="hidden" id="PagoSeleccionadoId" value="" />
+<input type="hidden" id="PagoSeleccionadoTrack" value="" />
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelFiltroPendiente">
+            <table style="width:100%">
+                <tr>
+                    <td>Filtro búsqueda:</td>
+                    <td style="text-align: right"><span id="iconoFiltroPendiente" class="glyphicon glyphicon-menu-down"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="panelFiltroPendiente" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label>Desde :</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control datetime" style="max-width:none" id="txtPendienteFechaDesde" placeholder="Fecha desde" title="Fecha desde" readonly />
+                            <div class="input-group-btn">
+                                <button class="btn" id="btnPendienteFechaDesde" title="Fecha desde"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Hasta :</label>
+                        <div class="input-group" style="padding-bottom: 0px">
+                            <input type="text" class="form-control datetime" style="max-width:none" id="txtPendienteFechaHasta" placeholder="Fecha hasta" title="Fecha hasta" readonly />
+                            <div class="input-group-btn">
+                                <button class="btn" id="btnPendienteFechaHasta" title="Fecha hasta"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Ficha Paciente:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtPendienteFicha" placeholder="Ficha Paciente" maxlength="50" style="max-width:none" />
+                    </div>
+                    <div class="col-sm-2">
+                        <label>Episodio:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtPendienteEpisodio" placeholder="Episodio" maxlength="50" style="max-width:none" />
+                    </div>
+                    <div class="col-sm-2">
+                        <label>N° Folio:</label>
+                        <input type="text" class="form-control text-right" id="txtPendienteFolio" placeholder="N° Folio" maxlength="15" onkeyup="PDV.SoloNumero(this)" />
+                    </div>
+                    <div class="col-sm-2">
+                        <label>N° Comprobante:</label>
+                        <input type="text" class="form-control text-right" id="txtPendienteComprobante" placeholder="N° Comprobante" maxlength="15" onkeyup="PDV.SoloNumero(this)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Rut o Nombre Paciente:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtPendientePaciente" placeholder="Paciente" maxlength="50" style="max-width:none" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Rut o Nombre Responsable:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtPendienteResponsable" placeholder="Responsable" maxlength="50" style="max-width:none" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Código o Nombre Socio Negocio:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtPendienteSocioNegocio" placeholder="Socio Negocio" maxlength="50" style="max-width:none" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Tipo Documento:</label>
+                        <div>
+                            <select id="dllTipoDocumento" class="form-control" style="max-width: none" title="Seleccione tipo documento">
+                                <option value="">Todos...</option>
+                                <option value="AN">Anticipo</option>
+                                <option value="OI">Boleta</option>
+                                <option value="CO">Convenio</option>
+                                <option value="FA">Factura</option>
+                                <option value="IM">IMED</option>
+                                <option value="OR">Orden de Venta</option>
+                                <option value="PA">Pagaré</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>Estado:</label>
+                        <div>
+                            <label class="radio-inline"><input type="radio" name="estadoDocumento" value="0" checked>Ambos</label>
+                            <label class="radio-inline"><input type="radio" name="estadoDocumento" value="1">Pendiente</label>
+                            <label class="radio-inline"><input type="radio" name="estadoDocumento" value="2">Pagado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-right">
+                <button class="btn btn-primary btn-sm" id="btnBuscarPendientePago" title="Buscar" onclick="PendientePago.BuscarDocumentosFiltro();"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
+                <button class="btn btn-default btn-sm" id="btnBuscarLimpiar" title="Limpiar" onclick="PendientePago.LimpiarBusqueda();">Limpiar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="nav nav-tabs nav-pills nav-justified table-bordered">
+    <li class="active"><a data-toggle="tab" href="#tabPendiente" class="lnkPendienteMenu">Transacciones</a></li>
+    <li id="navItemDetalle" class="disabled"><a data-toggle="tab" href="#tabDetalle" class="lnkPendienteMenu" disabled>Detalle</a></li>
+    <li id="navItemPago" class="disabled"><a data-toggle="tab" href="#tabPago" class="lnkPendienteMenu" disabled>Pago</a></li>
+</ul>
+<div class="tab-content">
+    <div id="tabPendiente" class="tab-pane fade in active" style="padding-top: 10px">
+        @Html.Partial("~/Views/Shared/PuntoVenta/_PartialPendientesLista.cshtml")
+    </div>
+    <div id="tabDetalle" class="tab-pane fade" style="padding-top: 10px">
+        @Html.Partial("~/Views/Shared/PuntoVenta/_PartialVentaDetalle.cshtml", Model)
+    </div>
+    <div id="tabPago" class="tab-pane fade" style="padding-top: 10px">
+        <div id="pnlPagoPendiente">
+            @Html.Partial("~/Views/Shared/PuntoVenta/_PartialMedioPagoDefault.cshtml")
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/HMS/PuntoVenta/PendientePago.js"></script>
+
+<script>
+    $(document).ready(function () {
+        PendientePago.Init();
+    });
+</script>

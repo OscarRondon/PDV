@@ -1,0 +1,133 @@
+﻿<script src="~/Scripts/HMS/AnticipoGarantia/ModalIngresoGarantia.js"></script>
+
+<input type="hidden" id="idAsignacion" />
+
+<div id="modalIngresoGarantia" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title" id="tituloModalIngresoGarantia">Ingreso Garantía</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">* Tipo Documento:</label>
+                        <select class="form-control input-sm" id="inputDoc" onchange="IngresoGarantiaModal.HabilitarControlesDocumento(this.value)">
+                            <option selected="selected" value="0">Seleccione Tipo Documento...</option>
+                            <option value="G">Garantia</option>
+                            @*//JM <option value="A">Anticipo</option>*@
+                        </select>
+                    </div>
+                </div>
+                @* Datos de Garantía *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label"><span id="asteriscoNumero" style="display: none">*</span> Número :</label>
+                        <div class="input-group">
+                            <input type="text" id="ListadoBoletasAbiertas" list="dataBoletasAbiertas" placeholder="Cargando..." class="form-control input-sm" />
+                            <datalist id="dataBoletasAbiertas"></datalist>
+                            <span class="input-group-btn">
+                                <button type="button" class="form-control btn btn-primary btn-sm" id="btnBuscarBoleta" onclick="IngresoGarantiaModal.BuscarInfoBoleta()"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Monto:</label>
+                        <input type="text" id="Monto" placeholder="Monto" class="form-control input-sm" readonly />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Medio de Pago:</label><br />
+                        <select class="form-control input-sm" id="respaldoDoc" onchange="IngresoGarantiaModal.mostraDivCheque(this.value)">
+                            <option selected="selected" value="">Seleccione Respaldo...</option>
+                            <option value="0">Efectivo</option>
+                            <option value="1">Cheque</option>
+                        </select>
+                    </div>
+                </div>
+                @* Datos de Cheque *@
+                <div class="row" style="padding-top: 5px" id="divCheque">
+                    <div class="col-md-4">
+                        <label class="control-label">* Banco:</label>
+                        <select id="ListaBancos" class="form-control input-sm"></select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Número Cheque:</label>
+                        <input type="text" id="GarNumeroCheque" placeholder="N° Cheque" class="form-control input-sm" />
+                    </div>
+                </div>
+                @* Datos Responsable *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">* Rut Responsable:</label>
+                        <input id="GarRutResponsable" placeholder="Rut Responsable" class="form-control input-sm" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Pasaporte Responsable:</label>
+                        <input id="PasResponsable" placeholder="Pasaporte Responsable" class="form-control input-sm" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Nombre Responsable:</label>
+                        <input id="NombreResponsable" placeholder="Nombre Responsable" class="form-control input-sm" />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-8">
+                        <label class="control-label">* Dirección/N°/Dpto/Block Responsable:</label>
+                        <input id="DireccionResponsable" placeholder="Dirección Responsable" class="form-control input-sm" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Comuna Responsable:</label>
+                        <input type="text" id="ListadoComunasResponsable" list="datalistResponsable" placeholder="Cargando..." class="form-control input-sm" />
+                        <datalist id="datalistResponsable"></datalist>
+                    </div>
+                </div>
+                @* Datos Paciente *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">* Ficha Clínica:</label>
+                        <input id="FichaClinica" placeholder="Ficha Clínica" class="form-control input-sm" readonly />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Episodio:</label>
+                        <input id="GarEpisodio" placeholder="Episodio" class="form-control input-sm" readonly />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">* Rut Paciente:</label>
+                        <input id="GarRutPaciente" placeholder="Rut Paciente" class="form-control input-sm" readonly />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Pasaporte Paciente:</label>
+                        <input id="PasPaciente" placeholder="Pasaporte Paciente" class="form-control input-sm" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Nombre Paciente:</label>
+                        <input id="NombrePaciente" placeholder="Nombre Paciente" class="form-control input-sm" readonly />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-8">
+                        <label class="control-label">* Dirección/N°/Dpto/Block Paciente:</label>
+                        <input id="DireccionPaciente" placeholder="Direccion Paciente" class="form-control input-sm" />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">* Comuna Paciente:</label>
+                        <input type="text" id="ListadoComunasPaciente" list="datalistPaciente" placeholder="Cargando..." class="form-control input-sm" />
+                        <datalist id="datalistPaciente"></datalist>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="btn btn-primary btn-sm" id="btnGuardar" onclick="IngresoGarantiaModal.GuardarFormulario()">Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        <div class="col-md-8 pull-right">
+            <p class="text-right">
+                <small>Los campos marcados con (*) son obligatorios.</small>
+            </p>
+        </div>
+    </div>
+</div>

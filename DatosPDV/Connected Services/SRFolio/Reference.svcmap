@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c8a1f63-18d6-4f12-b21b-3773f9744a19" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.16.98.189:1559/Folio/Folio.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Folio.wsdl" MetadataType="Wsdl" ID="4329bd9d-e156-47cd-b0e4-30fd7beab139" SourceId="1" SourceUrl="http://172.16.98.189:1559/Folio/Folio.svc?wsdl" />
+    <MetadataFile FileName="Folio.disco" MetadataType="Disco" ID="31c546c4-9ac6-4a60-9e81-7e1d44ad28ca" SourceId="1" SourceUrl="http://172.16.98.189:1559/Folio/Folio.svc?disco" />
+    <MetadataFile FileName="Folio.xsd" MetadataType="Schema" ID="3a5dbf79-48f4-4984-8502-a77686d8f064" SourceId="1" SourceUrl="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd0" />
+    <MetadataFile FileName="Folio1.xsd" MetadataType="Schema" ID="941cced9-2422-47e7-acb8-3e0d18b95492" SourceId="1" SourceUrl="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd2" />
+    <MetadataFile FileName="Folio2.xsd" MetadataType="Schema" ID="9585588e-cd16-4000-bd3c-8373432a340f" SourceId="1" SourceUrl="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

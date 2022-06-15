@@ -1,0 +1,52 @@
+﻿<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table id="listPendientesPago" class="table table-hover table-condensed  compact">
+                <thead>
+                    <tr class="bg-info">
+                        <th rowspan="2">Tipo</th>
+                        <th rowspan="2">Fecha</th>
+                        <th rowspan="2">Episodio</th>
+                        <th rowspan="2">N°</th>
+                        <th colspan="2" style="background-color: #eaf5fb" class="text-center">Paciente</th>
+                        <th colspan="2" class="text-center">Responsable</th>
+                        <th rowspan="2" style="background-color: #eaf5fb">Cuota</th>
+                        <th rowspan="2" style="background-color: #eaf5fb">Monto <br /> a Pagar</th>
+                        <th rowspan="2" style="background-color: #eaf5fb" title="Acciones a realizar">Acción</th>
+                        <th rowspan="2" style="background-color: #eaf5fb">N° Folio</th>
+                        <th colspan="2" class="text-center">Socio Negocio</th>
+                    </tr>
+                    <tr class="bg-info">
+                        <th style="background-color: #eaf5fb; width: 85px">Rut</th>
+                        <th style="background-color: #eaf5fb; width: 200px">Nombre</th>
+                        <th style="width: 85px">Rut</th>
+                        <th style="width: 200px">Nombre</th>
+                        <th style="width: 85px">Codigo</th>
+                        <th style="width: 200px">Nombre</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <table width="100%">
+                <tr>
+                    <td>
+                        N/A = No Aplica.
+                    </td>
+                    <td class="text-right">
+                        <button type="button" class="btn btn-primary btn-sm" id="btnActualizarDocumentos" onclick="PendientePago.BuscarDocumentosUsuario();">Actualizar mi listado</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<style>
+    tr.group,
+    tr.group:hover {
+        background-color: #ddd !important;
+    }
+</style>
+
+@Html.Partial("~/Views/Shared/PuntoVenta/_PartialAnularPago.cshtml")

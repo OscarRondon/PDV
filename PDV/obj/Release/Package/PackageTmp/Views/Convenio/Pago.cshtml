@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "PagoConvenio";
+}
+
+<h3>PagoConvenio</h3>
+
+<div class="modal-dialog">
+    <div class="modal-body">
+        <div class="modal-header">
+            <h4>Paciente</h4>
+        </div>
+        <div class="container">
+            <div class="col-xs-6 col-md-1">
+                <H6>Rut</H6>
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <input type="text" id="txtrut" data-bind="value:rut" class="form-control" placeholder="Ej: 1.111.111-1" />
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <button class="btn btn-success" data-bind="click:buscar">Buscar</button>
+            </div>
+        </div>
+        <div>
+            <h4> </h4>
+        </div>
+        <div class="container">
+            <div class="col-xs-6 col-md-5">
+                Responsable: <input type="text" id="txtresponsable" data-bind="value:nombre" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <table id="tblpago" class="table table-striped table-bordered dt-responsive nowrap">
+        <thead>
+            <tr>
+                <th width="20">Seleccionar</th>
+                <th>N° Cuota</th>
+                <th>Monto</th>
+                <th>Fecha Vencimiento</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", true)</td>
+            <td>1</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", true)</td>
+            <td>2</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", true)</td>
+            <td>3</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", false)</td>
+            <td>4</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", false)</td>
+            <td>5</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td>@Html.CheckBox("chbkSel", false)</td>
+            <td>6</td>
+            <td>$75.000</td>
+            <td>@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>Total a pagar: </td>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="text" id="txtpago" class="form-control" disabled="disabled" value="225.000" />
+                    </div>
+                    <button class="btn btn-success" id="btnpago" data-bind="click:pagar">Pagar</button>
+                    <button class="btn btn-info" id="btnanular" data-toggle="modal" data-target="#AlertaModal">Anular Convenio</button>
+                </td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+@*Alerta Modal*@
+<div id="AlertaModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="btnmodal" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Alerta!</h4>
+            </div>
+            <div class="modal-body">
+                <p>¿Desea eliminar Convenio activo?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="btnaceptar" data-bind="click:aceptar">Aceptar</button>
+                <button type="button" id="btncerrar" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tblPago').DataTable(
+            {
+                "language": dataTableEspanol,
+                "info": false,
+                "paging": false,
+                "searching": false,
+                "ordering": false,
+            });
+    });
+</script>

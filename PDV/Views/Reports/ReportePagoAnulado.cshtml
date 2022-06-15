@@ -1,0 +1,118 @@
+﻿@using EntidadesPDV.Usuario;
+@using EntidadesPDV.Caja;
+@{
+    ViewBag.Title = "Reporte Anulación de Pagos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string fechaInicio = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
+    string fechaFin = DateTime.Now.ToString("dd/MM/yyyy");
+
+    bool EsJefe = ViewBag.EsJefe;
+    bool EsSupervisor = ViewBag.EsSupervisor;
+    bool EsAdmision = ViewBag.EsAdmision;
+
+    List<UsuarioDV> LstAdmisionista = new List<UsuarioDV>();
+    List<UsuarioDV> LstSupervisor = new List<UsuarioDV>();
+    List<CajasEnt> LstCaja = new List<CajasEnt>();
+    if (ViewBag.ListaAdmisionista != null)
+    {
+        LstAdmisionista = ViewBag.ListaAdmisionista;
+    }
+    if (ViewBag.ListaSupervisor != null)
+    {
+        LstSupervisor = ViewBag.ListaSupervisor;
+    }
+    if (ViewBag.ListaCaja != null)
+    {
+        LstCaja = ViewBag.ListaCaja;
+    }
+}
+<input type="hidden" id="hdnUsuario" value="@ViewBag.Usuario" />
+<input type="hidden" id="hdnTipoPerfil" value="@ViewBag.TipoPerfil" />
+
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelFiltro">
+                Reporte Anulación de Pagos:
+            </div>
+            <div id="panelFiltro" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row" style="padding-bottom: 5px" ">
+                        <div class="col-sm-2">
+                            <label>Desde:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaDesde" placeholder="Fecha desde" title="Fecha anulación desde" value="@fechaInicio" readonly />
+                                <div class="input-group-btn">
+                                    <button class="btn" id="btnPendienteFechaDesde" title="Fecha desde"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Hasta :</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaHasta" placeholder="Fecha hasta" title="Fecha anulación hasta" value="@fechaFin" readonly />
+                                <div class="input-group-btn">
+                                    <button class="btn" id="btnPendienteFechaHasta" title="Fecha hasta"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (EsJefe || EsSupervisor)
+                    {
+                        <div class="row" style="border-top:1px solid blue">
+                            @if (EsJefe)
+                            {
+
+                                <div class="col-sm-4">
+                                    <label>Supervisor:</label>
+                                    <select id="ddlUsuarioSupervisor" class="form-control">
+                                        <option value="">Seleccione Usuario...</option>
+                                        @foreach (var item in LstSupervisor)
+                                        {
+                                            <option value="@item.Login">@item.Nombre</option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+                            @if (EsJefe || EsSupervisor)
+                            {
+
+                                <div class="col-sm-4">
+                                    <label>Admisionista:</label>
+                                    <select id="ddlUsuarioAdmisionista" class="form-control">
+                                        <option value="">Seleccione Usuario...</option>
+                                        @foreach (var item in LstAdmisionista)
+                                        {
+                                            <option value="@item.Login">@item.Nombre</option>
+                                        }
+                                    </select>
+                                </div>
+
+                            }
+                            @if (EsJefe || EsSupervisor)
+                            {
+                                <div class="col-sm-4">
+                                    <label>Cajas:</label>
+                                    <select id="ddlCajas" class="form-control">
+                                        <option value="">Seleccione Caja...</option>
+                                        @foreach (var item in LstCaja)
+                                        {
+                                            <option value="@item.IdCaja">@item.IdentificacionCaja</option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-primary btn-sm" title="Imprimir" onclick="PagosAnulados.ImprimirReporte('PagosAnulados.rpt')"><span class="glyphicon glyphicon-print"></span>&nbsp;Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/HMS/Reportes/ReportePagoAnulado.js"></script>

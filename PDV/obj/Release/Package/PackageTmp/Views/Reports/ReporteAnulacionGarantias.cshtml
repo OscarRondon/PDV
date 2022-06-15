@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Reporte Anulación de garantias/anticipo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string fechaInicio = DateTime.Now.ToString("dd/MM/yyyy");
+    string fechaFin = DateTime.Now.ToString("dd/MM/yyyy");
+
+
+}
+<input type="hidden" id="hdnUsuario" value="@ViewBag.Usuario" />
+<input type="hidden" id="hdnTipoPerfil" value="@ViewBag.TipoPerfil" />
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelFiltro">
+                Reporte Anulación de garantias/anticipos:
+            </div>
+            <div id="panelFiltro" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row" style="padding-right: 10px">
+                        <div class="col-sm-6">
+                            <label>Fecha:</label>
+                            <div class="input-group col-sm-10">
+                                <span class="input-group-addon">desde</span>
+                                <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaDesde" placeholder="Fecha inicio búsqueda" value="@fechaInicio" readonly />
+                                <button class="input-group-addon" id="btnFechaDesde"><i class="glyphicon glyphicon-calendar"></i></button>
+                                <span class="input-group-addon">hasta</span>
+                                <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaHasta" placeholder="Fecha término búsqueda" value="@fechaFin" readonly />
+                                <button class="input-group-addon" id="btnFechaHasta"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="button" class="btn btn-primary btn-sm" title="Imprimir" onclick="AnulacionGarantia.ImprimirReporte('AnulacionGarantiaAnticipo.rpt')"><span class="glyphicon glyphicon-print"></span>&nbsp;Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/HMS/Reportes/ReporteAnulacionGarantias.js"></script>

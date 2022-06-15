@@ -1,0 +1,49 @@
+﻿<input type="hidden" id="hdnIdFolioAnulacion" value="" />
+<input type="hidden" id="hdnFolioIniAnu" value="" />
+<input type="hidden" id="hdnFolioFinAnu" value="" />
+<input type="hidden" id="hdnIdCajaAnulacion" value="" />
+
+<div id="modalAnularFolioRango" class="modal fade modalRechazo" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Anular rango folio</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div style="padding-top: 5px">
+                        <label class="col-sm-4 control-label">Folio inicial</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon">N°</span>
+                            <input placeholder="Folio inicial" id="txtFolioInicialAnular" class="form-control text-right" onkeyup="PDV.SoloNumero(this);" maxlength="15" />
+                        </div>
+                    </div>
+                    <div style="padding-top: 5px">
+                        <label class="col-sm-4 control-label">Folio final</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon">N°</span>
+                            <input placeholder="Folio final" id="txtFolioFinalAnular" onkeyup="PDV.SoloNumero(this);" class="form-control text-right" maxlength="15" />
+                        </div>
+                    </div>
+                    <div style="padding-top: 5px" class="form-inline">
+                        <label class="col-sm-4 control-label">Motivo de anulación</label>
+                        <div class="col-sm-8" style="padding-left: 0px">
+                            <select id="ddlMotivoAnulacion" class="form-control" style="max-width: none;width:100%"></select>
+                        </div>
+                        @*<div class="col-sm-8" style="padding-left: 0px">
+                                    <textarea class="form-control" rows="3" id="txtMotivoAnulacion" maxlength="250" style="max-width: none; width:100%"></textarea>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" onclick="AnularFolioRango.AnularConfirmacion();">Confirmar Anulación</button>
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/HMS/Folio/AnularFolio.js"></script>

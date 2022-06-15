@@ -1,0 +1,9 @@
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\bin\Release\NLog.config
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\bin\Release\EntidadesPDV.dll
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\bin\Release\EntidadesPDV.pdb
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\bin\Release\NLog.dll
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\bin\Release\NLog.xml
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\obj\Release\EntidadesPDV.csproj.CoreCompileInputs.cache
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\obj\Release\EntidadesPDV.csproj.CopyComplete
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\obj\Release\EntidadesPDV.dll
+C:\SVN_OR\FuentesHMS\PuntoVenta\DEV\Version 1\PDVWeb\EntidadesPDV\obj\Release\EntidadesPDV.pdb

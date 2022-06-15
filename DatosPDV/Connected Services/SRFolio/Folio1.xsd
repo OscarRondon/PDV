@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="FolioType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CajaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CajaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadSegmento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CantidadSegmentoPendientes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EsAnulado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EsUltimoRegistro" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaFolio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FolioFinal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioInicial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFolio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUsuarioSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoAnulacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegmentosFolio" nillable="true" type="tns:ArrayOfFolioSegmentoType" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFolios" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosAnulados" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosDisponibles" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosUsados" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioType" nillable="true" type="tns:FolioType" />
+  <xs:complexType name="ArrayOfFolioSegmentoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FolioSegmentoType" nillable="true" type="tns:FolioSegmentoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolioSegmentoType" nillable="true" type="tns:ArrayOfFolioSegmentoType" />
+  <xs:complexType name="FolioSegmentoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EsAnulado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EsUltimoRegistro" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaSegmento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FolioActual" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioFinal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioInicial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdFolio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaSegmento" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalFolios" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosAnulados" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosDisponibles" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalFoliosUsados" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioSegmentoType" nillable="true" type="tns:FolioSegmentoType" />
+  <xs:complexType name="RespuestaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Error" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdTrack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaType" nillable="true" type="tns:RespuestaType" />
+  <xs:complexType name="ArrayOfFolioType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FolioType" nillable="true" type="tns:FolioType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolioType" nillable="true" type="tns:ArrayOfFolioType" />
+  <xs:complexType name="FolioAnuladoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Anulado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaAnulacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FolioFinal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioInicial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdFolio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUsuarioAnulacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUsuarioAprobacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaAnulacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioAnulacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioAprobacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioAnuladoType" nillable="true" type="tns:FolioAnuladoType" />
+  <xs:complexType name="FolioFilterType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaFinal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FolioFinal" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioInicial" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFolio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUsuarioSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObtenerSegmentos" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioFilterType" nillable="true" type="tns:FolioFilterType" />
+  <xs:complexType name="ArrayOfFolioAnuladoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FolioAnuladoType" nillable="true" type="tns:FolioAnuladoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolioAnuladoType" nillable="true" type="tns:ArrayOfFolioAnuladoType" />
+  <xs:complexType name="ArrayOfFolioGlobalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FolioGlobalType" nillable="true" type="tns:FolioGlobalType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFolioGlobalType" nillable="true" type="tns:ArrayOfFolioGlobalType" />
+  <xs:complexType name="FolioGlobalType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CajaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Episodio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ficha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolioGlobalType" nillable="true" type="tns:FolioGlobalType" />
+</xs:schema>

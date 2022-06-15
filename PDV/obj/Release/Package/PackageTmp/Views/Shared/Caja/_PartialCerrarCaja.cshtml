@@ -1,0 +1,64 @@
+﻿@model ICollection<EntidadesPDV.Caja.AsignacionCaja>
+
+<script src="~/Scripts/HMS/Caja/CierreCajaModal.js"></script>
+
+<input type="hidden" id="asignacionSeleccionada" />
+
+<div id="modalCierreCaja" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title" id="tituloModalCierreCaja">Cierre Caja</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-6">
+                        <label class="control-label">Identificación Caja:</label>
+                        <input id="NombreCaja" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Usuario Asignado:</label>
+                        <input id="UsuarioCaja" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-6">
+                        <label class="control-label">Fecha Inicio Caja:</label>
+                        <input id="FechaInicioCaja" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Fecha Solicitud Cierre:</label>
+                        <input id="FechaCierreCaja" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-6">
+                        <label class="control-label">Monto Inicial Caja:</label>
+                        <input id="MontoInicioCaja" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Monto Final Caja:</label>
+                        <input id="MontoCierreCaja" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-6">
+                        <label class="control-label">Diferencia Monto Final:</label>
+                        <input id="MontoDiferenciaCaja" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Observaci&oacute;n Diferencia:</label>
+                        <input id="ObservacionDiferenciaCaja" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" id="BotonApruebaCierre" style="" onclick="CierreCajaModal.GuardarFormulario()">Aprueba</button>
+                <button type="button" class="btn btn-danger btn-sm" id="BotonRechazaCierre" style="" onclick="CierreCajaModal.GuardarFormulario()">Rechaza</button>
+                <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

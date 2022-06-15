@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Folio/Folio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+  <xs:element name="AdministrarLimiteFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="folio" nillable="true" type="q1:FolioType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarLimiteFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarLimiteFolioResult" nillable="true" type="q2:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLimiteFolio">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaLimiteFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaLimiteFolioResult" nillable="true" type="q3:ArrayOfFolioType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoLimiteFolio">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoLimiteFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUltimoLimiteFolioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="folio" nillable="true" type="q4:FolioType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarFolioResult" nillable="true" type="q5:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarFolioSegmentoMasivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="listaFolio" nillable="true" type="q6:ArrayOfFolioType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarFolioSegmentoMasivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarFolioSegmentoMasivoResult" nillable="true" type="q7:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaSegmentoMasivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="listaSegmento" nillable="true" type="q8:ArrayOfFolioSegmentoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaSegmentoMasivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AsignarCajaSegmentoMasivoResult" nillable="true" type="q9:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="folio" nillable="true" type="q10:FolioAnuladoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AnularFolioResult" nillable="true" type="q11:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutorizarAnulacionFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="folio" nillable="true" type="q12:FolioAnuladoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutorizarAnulacionFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AutorizarAnulacionFolioResult" nillable="true" type="q13:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoFolio">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUltimoFolioResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFolios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q14:FolioFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaFoliosResult" nillable="true" type="q15:ArrayOfFolioType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaSegmentosByFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FolioId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaSegmentosByFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaSegmentosByFolioResult" nillable="true" type="q16:ArrayOfFolioSegmentoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosAnulados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="folio" nillable="true" type="q17:FolioFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosAnuladosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaFoliosAnuladosResult" nillable="true" type="q18:ArrayOfFolioAnuladoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosAnuladosCajaPorSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q19:FolioFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosAnuladosCajaPorSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaFoliosAnuladosCajaPorSupervisorResult" nillable="true" type="q20:ArrayOfFolioAnuladoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiguienteFolioByCaja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCaja" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiguienteFolioByCajaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetSiguienteFolioByCajaResult" nillable="true" type="q21:FolioSegmentoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosCajaByUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaFoliosCajaByUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaFoliosCajaByUsuarioResult" nillable="true" type="q22:ArrayOfFolioSegmentoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGlobalFolio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="folioInicial" type="xs:int" />
+        <xs:element minOccurs="0" name="folioFinal" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGlobalFolioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaGlobalFolioResult" nillable="true" type="q23:ArrayOfFolioGlobalType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

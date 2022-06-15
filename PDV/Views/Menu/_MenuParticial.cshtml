@@ -1,0 +1,22 @@
+﻿@model EntidadesPDV.Menu.MenuDV
+
+@foreach (EntidadesPDV.Menu.MenuDV menu in Model.ListaMenusPadres)
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            @menu.Name <b class="caret"></b>
+        </a>
+        @{
+            var listaHijo = Model.ListaMenusHijos.Where(c => c.Key == menu.Code).Select(p => p.Value).FirstOrDefault();
+        }
+        <ul class="dropdown-menu">
+            @foreach (EntidadesPDV.Menu.MenuDV menuHijo in listaHijo)
+            {
+                <li>
+                    <a href="@string.Format("/{0}/{1}", menuHijo.Controlador, menuHijo.Funcion)" class="linkMenu">@menuHijo.Name</a>
+                </li>
+            }
+        </ul>
+    </li>
+}
+

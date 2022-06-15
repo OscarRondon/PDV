@@ -1,0 +1,108 @@
+﻿@model EntidadesPDV.Caja.AsignacionCaja
+<input type="hidden" id="hdnMontoEfectivo" value="0" />
+<input type="hidden" id="hdnMontoAjuste" value="0" />
+<input type="hidden" id="hdnMontoFijo" value="@Model.MontoFijo" />
+
+<input type="hidden" id="hdnEstadoAsignacion" value="@Convert.ToInt32(Model.Estado)" />
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-weight: bold">Arqueo cierre caja</div>
+        <div class="panel-body">
+            Una vez completada la acción de Cerrar caja, se generarán las nóminas correspondientes.
+            <br /><br />
+            <div class="col-sm-3">
+                <div class="col-sm-12 row">
+                    <label class="control-label">Monto fijo inicial:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input type="text" id="txtMontoInicial" class="form-control text-right" placeholder="Monto inicial" value="@string.Format("{0:n0}",Model.MontoFijo)" disabled maxlength="15" />
+                    </div>
+                </div>
+                <div class="col-sm-12 row" style="padding-top: 10px">
+                    <label class="control-label">Monto recaudado:</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        @if (Model.Estado == EntidadesPDV.Caja.EstadoAsignacion.CerradaEfectivo)
+                        {
+                            <input type="text" id="txtMontoRecaudado" class="form-control text-right" placeholder="Monto recaudado" value="@string.Format("{0:n0}", Model.MontoRecaudado)" disabled />
+                        }
+                        else
+                        {
+                            <input type="text" id="txtMontoRecaudado" class="form-control text-right" placeholder="Monto recaudado" onkeyup="PDV.SoloNumeroFormato(this)" maxlength="15" />
+                        }
+                    </div>
+                </div>
+                <div class="col-sm-12 row" style="padding-top: 10px">
+                    <label class="control-label">Monto diferencia: </label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        @if (Model.Estado == EntidadesPDV.Caja.EstadoAsignacion.CerradaEfectivo)
+                        {
+                            <input type="text" id="txtMontoDiferencia" class="form-control text-right" placeholder="Monto diferencia" value="@string.Format("{0:n0}", Model.MontoDiferencia)" disabled />
+                        }
+                        else
+                        {
+                            <input type="text" id="txtMontoDiferencia" class="form-control text-right" placeholder="Monto diferencia" onkeyup="PDV.SoloNumeroFormato(this)" disabled maxlength="15" />
+                        }
+                        @if (Model.Estado != EntidadesPDV.Caja.EstadoAsignacion.CerradaEfectivo)
+                        {
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="button" title="Ajustar cierre contado" onclick="Cierre.MotoDiferenciaAjustar()">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">&nbsp;</div>
+            <div class="col-sm-3">
+                @*<strong>Totales Documento:</strong>*@
+                <table id="listaTotalDocumento" class="table table-striped table-hover table-condensed compact table-bordered">
+                    <thead>
+                        <tr class="bg-info">
+                            <th>Documentos</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th id="colDocumentoMonto"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-sm-5">
+                @*<strong>Totales Contado:</strong>*@
+                <table id="listaTotalPagos" class="table table-striped table-hover table-condensed compact table-bordered">
+                    <thead>
+                        <tr class="bg-info">
+                            <th>Medios de Pago</th>
+                            <th>Monto</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th id="colContadoMonto"></th>
+                            <th id="colContadoCantidad"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+        </div>
+        <div class="panel-footer text-right">
+            @if (Model.Estado != EntidadesPDV.Caja.EstadoAsignacion.CerradaEfectivo)
+            {
+                <button id="btnCerrarCajaContado" class="btn btn-primary btn-sm" onclick="Cierre.GuardarCierreEfectivo()">Cierre Contado</button>
+            }
+            <button id="btnCerrarCajaFinal" class="btn btn-primary btn-sm" onclick="Cierre.GuardarCierreCajaFinal()">Cierre Final</button>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/HMS/PuntoVenta/CerrarCaja.js"></script>

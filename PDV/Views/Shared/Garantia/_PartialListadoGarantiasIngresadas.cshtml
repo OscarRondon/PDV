@@ -1,0 +1,35 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title"><strong>Listado de Garant&iacute;as</strong></h1>
+    </div>
+    <div class="panel-body">
+        <table id="listadoGarantias" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+            <thead>
+                <tr class="bg-info">
+                    <th>Tipo<br /> Garantia</th>
+                    <th>Fecha<br />Ingreso</th>
+                    <th>Rut<br />Responsable</th>
+                    <th>Nombre<br />Responsable</th>
+                    <th>Rut<br />Paciente</th>
+                    <th>Nombre<br />Paciente</th>
+                    <th>Ficha<br />Cl&iacute;nica</th>
+                    <th>Monto</th>
+                    <th>Forma<br />Pago</th>
+                    <th>Entidad<br />Emisora</th>
+                    <th>Número<br />Cheque</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer text-right">
+        <button class="btn btn-primary btn-sm" onclick="GarantiaListado.BuscarListaGarantias()">Actualizar Listado</button>
+        @*<button class="btn btn-primary btn-sm" onclick="IngresoGarantiaModal.AbrirFormulario()">Agregar Garantía</button>*@
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/Garantia/_PartialIngresarGarantia.cshtml")
+
+<script src="~/Scripts/HMS/AnticipoGarantia/ListadosGarantias.js"></script>

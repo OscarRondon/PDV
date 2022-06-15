@@ -1,0 +1,117 @@
+﻿
+<script src="~/Scripts/HMS/AnticipoGarantia/DetallesGarantia.js"></script>
+<input type="hidden" id="idDoc" value="" />
+<div id="modalDetallesGarantia" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title"><span id="tituloModalDetallesGarantia"></span></h4>
+            </div>
+            <div class="modal-body">
+                @* Datos de Garantía *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">Tipo Documento:</label>
+                        <input type="text" id="inputDoc" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Monto:</label>
+                        <input type="text" id="Monto" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4" id="divRespaldo" style="display: none">
+                        <label class="control-label">Respaldo:</label><br />
+                        <input type="text" id="respaldoDoc" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                @* Datos de Cheque *@
+                <div class="row" style="padding-top: 5px" id="divCheque">
+                    <div class="col-md-4">
+                        <label class="control-label">Banco:</label>
+                        <input type="text" id="Banco" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Número Cheque:</label>
+                        <input type="text" id="GarNumeroCheque" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                @* Datos Responsable *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">Rut Responsable:</label>
+                        <input type="text" id="GarRutResponsable" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Pasaporte Responsable:</label>
+                        <input type="text" id="PasResponsable" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Nombre Responsable:</label>
+                        <input type="text" id="NombreResponsable" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-8">
+                        <label class="control-label">Dirección (N°/Dpto/Block) Responsable:</label>
+                        <input type="text" id="DireccionResponsable" class="form-control input-sm" style="max-width: none" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Comuna Responsable:</label>
+                        <input type="text" id="ComunaResponsable" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                @* Datos Paciente *@
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">Ficha Clínica:</label>
+                        <input type="text" id="FichaClinica" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Episodio:</label>
+                        <input type="text" id="GarEpisodio" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-4">
+                        <label class="control-label">Rut Paciente:</label>
+                        <input type="text" id="GarRutPaciente" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Pasaporte Paciente:</label>
+                        <input type="text" id="PasPaciente" class="form-control input-sm" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Nombre Paciente:</label>
+                        <input type="text" id="NombrePaciente" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-8">
+                        <label class="control-label">Dirección (N°/Dpto/Block) Paciente:</label>
+                        <input type="text" id="DireccionPaciente" class="form-control input-sm" style="max-width: none" disabled />
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Comuna Paciente:</label>
+                        <input type="text" id="ComunaPaciente" class="form-control input-sm" disabled />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 5px">
+                    <div class="col-md-12">
+                        <label class="control-label">Comentario:</label>
+                        <input type="text" id="Comentario" class="form-control input-sm" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" id="btnImprimir" onclick="DetallesGarantia.Imprimir()">Imprimir</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnDevolucion" onclick="DetallesGarantia.DevolverGarantia()">Devolver</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnAplicar" onclick="DetallesGarantia.AplicarGarantia()">Aplicar</button>
+                <button type="button" class="btn btn-primary btn-sm" id="btnGuardar" onclick="DetallesGarantia.AgregarComentario()">Guardar</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="DetallesGarantia.LimpiarFormulario()" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<textarea style="display:none"></textarea>

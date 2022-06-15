@@ -1,0 +1,32 @@
+﻿<input type="hidden" id="hdnAnulaPagoTipo" value="" />
+
+<div id="ModalAnularPago" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Anular pago</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-condensed table-striped compact text-nowrap" id="listPagos" style="width: 100%">
+                    <thead>
+                        <tr class="bg-info">
+                            <th width="5%"></th>
+                            <th width="30%">N° Pago</th>
+                            <th width="30%">Fecha Pago</th>
+                            <th width="30%">Monto Pago</th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/HMS/PuntoVenta/AnularPago.js"></script>

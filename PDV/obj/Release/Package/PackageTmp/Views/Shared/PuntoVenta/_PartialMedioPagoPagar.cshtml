@@ -1,0 +1,110 @@
+﻿@using EntidadesPDV;
+@{
+    List<ItemList> LstBancos = ViewBag.ListaBancos;
+    List<ItemList> LstTarjetas = ViewBag.ListaTarjetas;
+    string fechaActual = DateTime.Today.ToString("dd/MM/yyyy");
+}
+<input type="hidden" id="formaPagoSeleccionada" value="" />
+<input type="hidden" id="hdnFechaActualPago" value="@fechaActual" />
+
+<div id="ModalMedioPago" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Medio de Pago</h4>
+            </div>
+            <div class="modal-body">
+                <fieldset><legend id="tituloMedioPago" style="text-transform: capitalize">Pagar</legend></fieldset>
+                <div class="row" id="divTarjeta" style="display:none">
+                    <label class="col-sm-4">Tarjeta</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></div>
+                        <select class="form-control" id="ddlTarjetaCredito">
+                            @if (LstTarjetas != null && LstTarjetas.Count > 0)
+                            {
+                                <option value="">Seleccione Tarjeta...</option>
+                                foreach (var item in LstTarjetas)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">Sin datos...</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row" id="divBanco" style="display:none">
+                    <label class="col-sm-4">Banco</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+                        <select class="form-control" id="ddlBanco">
+                            @if (LstBancos != null && LstBancos.Count > 0)
+                            {
+                                <option value="">Seleccione Banco...</option>
+                                foreach (var item in LstBancos)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            }
+                            else
+                            {
+                                <option value="">Sin datos...</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row" id="divNumero" style="display:none">
+                    <label class="col-sm-4">N° Operación/Cheque</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">N°</span>
+                        <input type="text" class="form-control" id="txtNumero" placeholder="Ingrese N° Operación/Cheque">
+                    </div>
+                </div>
+                <div class="row" id="divFecha" style="display:none;">
+                    <label class="col-sm-4">Fecha <span id="tituloFecha"></span></label>
+                    <div class="input-group">
+                        <button class="input-group-addon" id="btnFechaPago" title="Fecha"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <input type="text" class="form-control" id="txtFechaPago" placeholder="Ingrese Fecha" value="@fechaActual" data-fecha="@fechaActual" />
+                    </div>
+                </div>
+                <div class="row" id="divMontoPago">
+                    <label class="col-sm-4">Monto a Pagar</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input type="text" class="form-control text-right" id="txtMontoPagar" placeholder="Ingrese Monto a pagar" data-valor="0" onkeyup="PDV.SoloNumeroFormato(this)" maxlength="15">
+                    </div>
+                </div>
+                <div class="row" id="divMontoRedondeo" style="display:none;">
+                    <label class="col-sm-4">Ley de Redondeo</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input type="text" class="form-control text-right" id="txtMontoRedondeo" maxlength="15" disabled value="0">
+                    </div>
+                </div>
+
+                <div class="row" id="divMontoPagoEfectivo" style="display:none;">
+                    <br />
+                    <label class="col-sm-4">Efectivo</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input type="text" class="form-control text-right" id="txtMontoPagoEfectivo" onkeyup="PDV.SoloNumeroFormato(this); PDV.Restar(this);" maxlength="15">
+                    </div>
+                </div>
+                <div class="row" id="divMontoPagoVuelto" style="display:none;">
+                    <label class="col-sm-4">Vuelto</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                        <input type="text" class="form-control text-right" id="txtMontoPagoVuelto" maxlength="15" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" id="btnModalAgregarMedioPago" onclick="MedioPago.MedioPagoAgregar();">Agregar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

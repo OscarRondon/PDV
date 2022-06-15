@@ -1,0 +1,114 @@
+﻿@{
+    string fechaInicio = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
+    string fechaFin = DateTime.Now.ToString("dd/MM/yyyy");
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"> <a data-toggle="tab" href="#foliosupervisor">Folio por Supervisor &nbsp;</a></li>
+    <li>                <a data-toggle="tab" href="#foliolimite" onclick="LimiteFolio.Init()">Limite de Folio &nbsp;</a></li>
+</ul>
+<div class="tab-content">
+    @*<div class="container">*@
+    <div id="foliosupervisor" class="tab-pane fade in active table-bordered" style="padding: 10px 10px 10px 10px">
+        <div class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelFiltro">
+                    <table style="width:100%">
+                        <tr>
+                            <td>Filtro búsqueda:</td>
+                            <td style="text-align: right"><span id="iconoFiltro" class="glyphicon glyphicon-menu-down"></span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="panelFiltro" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row" style="padding-right: 10px">
+                            <div class="col-sm-6">
+                                <label class="col-sm-2">N° folio:</label>
+                                <div class="input-group col-sm-10">
+                                    <span class="input-group-addon">desde</span>
+                                    <input type="text" class="form-control col-sm-2 text-right" style="max-width:none" id="txtFolioDesde" placeholder="Folio inicio búsqueda" onkeyup="PDV.SoloNumero(this)" maxlength="15" />
+                                    <span class="input-group-addon">hasta</span>
+                                    <input type="text" class="form-control col-sm-2 text-right" style="max-width:none" id="txtFolioFinal" placeholder="Folio final búsqueda" onkeyup="PDV.SoloNumero(this)" maxlength="15" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="col-sm-2">Fecha:</label>
+                                <div class="input-group col-sm-10">
+                                    <span class="input-group-addon">desde</span>
+                                    <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaInicio" placeholder="Fecha inicio búsqueda" value="@fechaInicio" readonly />
+                                    <button class="input-group-addon" id="btnFechaInicio"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    <span class="input-group-addon">hasta</span>
+                                    <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaFinal" placeholder="Fecha término búsqueda" value="@fechaFin" readonly />
+                                    <button class="input-group-addon" id="btnFechaFinal"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button class="btn btn-primary btn-sm" id="btnBuscarFolio" title="Buscar" onclick="Folio.BuscarFolios();"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="font-weight:bold ">General</div>
+                <div class="panel-body">
+                    <table id="listaFolios" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+                        <thead>
+                            <tr class="bg-info">
+                                <th width="15%" rowspan="2" style="border: 1px solid #ddd !important">Documento</th>
+                                <th colspan="2" style="text-align: center; border: 1px solid #ddd !important">Rango</th>
+                                <th colspan="4" style="text-align: center; border: 1px solid #ddd !important">Folio</th>
+                                <th width="15%" rowspan="2" style="border: 1px solid #ddd !important">Fecha creación</th>
+                                <th width="15%" rowspan="2" style="border: 1px solid #ddd !important">N° segmentos</th>
+                                <th width="25%" rowspan="2" style="border: 1px solid #ddd !important">Usuario supervisor</th>
+                                <th rowspan="2" style="border: 1px solid #ddd !important">Acción</th>
+                            </tr>
+                            <tr class="bg-info">
+                                <th style="border: 1px solid #ddd !important">Inicio</th>
+                                <th style="border: 1px solid #ddd !important">Fin</th>
+                                <th style="border: 1px solid #ddd !important">Anulados</th>
+                                <th style="border: 1px solid #ddd !important">Usados</th>
+                                <th style="border: 1px solid #ddd !important">Disponibles</th>
+                                <th style="border: 1px solid #ddd !important">Total</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="panel-footer text-right">
+                    <button class="btn btn-primary btn-sm" id="btnAgregarFolio" data-toggle="modal" data-target="#modalAgregarFolio" title="Agregar nuevo folio" onclick="CrearFolioModal.ObtenerUltimoFolio();"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Folio</button>
+                </div>
+            </div>
+        </div>
+        @*</div>*@
+    </div>
+    <div id="foliolimite" class="tab-pane fade in table-bordered" style="padding: 10px 10px 10px 10px">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <table id="listLimiteFolio" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+                    <thead>
+                        <tr class="bg-info">
+                            <th width="15%">Folio inicio</th>
+                            <th width="15%">Folio fin</th>
+                            <th width="15%">Fecha creación</th>
+                            <th width="5%">¿Rango anulado?</th>
+                            <th width="25%">Usuario supervisor</th>
+                            <th width="25%">Motivo Anulación</th>
+                            <th width="5%">Acción</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="panel-footer text-right">
+                <button class="btn btn-primary btn-sm" id="btnAgregarLimiteFolio" data-toggle="modal" data-target="#modalAgregarLimite" title="Agregar limite folio" onclick="CrearLimiteModal.ObtenerUltimoLimiteFolio();"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar límite</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/Folio/_PartialCrearFolio.cshtml")
+@Html.Partial("~/Views/Shared/Folio/_PartialCrearLimite.cshtml")
+@Html.Partial("~/Views/Shared/Folio/_PartialAnularFolioRango.cshtml")
+
+<script type="text/javascript" src="~/Scripts/HMS/Folio/FolioPrincipal.js"></script>

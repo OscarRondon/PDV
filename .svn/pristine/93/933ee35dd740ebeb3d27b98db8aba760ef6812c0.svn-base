@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Caja/Caja.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+  <xs:element name="GetListaCajas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="caja" nillable="true" type="q1:CajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCajasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaCajasResult" nillable="true" type="q2:ArrayOfCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarCaja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="caja" nillable="true" type="q3:CajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarCajaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarCajaResult" nillable="true" type="q4:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarCajaMasivoSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="cajas" nillable="true" type="q5:ArrayOfCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarCajaMasivoSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarCajaMasivoSupervisorResult" nillable="true" type="q6:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaByParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="cajaSeach" nillable="true" type="q7:CajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaByParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetCajaByParamsResult" nillable="true" type="q8:CajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCaja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="caja" nillable="true" type="q9:AsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AsignarCajaResult" nillable="true" type="q10:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaCierre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="caja" nillable="true" type="q11:AsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaCierreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AsignarCajaCierreResult" nillable="true" type="q12:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaAjusteCierre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="caja" nillable="true" type="q13:AsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaAjusteCierreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AsignarCajaAjusteCierreResult" nillable="true" type="q14:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaMasivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="asignaciones" nillable="true" type="q15:ArrayOfAsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsignarCajaMasivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AsignarCajaMasivoResult" nillable="true" type="q16:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCajaAsignadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="cajaSearch" nillable="true" type="q17:AsignacionCajaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaCajaAsignadasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaCajaAsignadasResult" nillable="true" type="q18:ArrayOfAsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaAsignadaById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAsignacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaAsignadaByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetCajaAsignadaByIdResult" nillable="true" type="q19:AsignacionCajaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaMontoCierre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsignacionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCajaMontoCierreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetCajaMontoCierreResult" nillable="true" type="q20:ArrayOfMontoCierreType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

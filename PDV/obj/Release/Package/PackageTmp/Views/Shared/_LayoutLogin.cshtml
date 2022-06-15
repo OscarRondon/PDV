@@ -1,0 +1,54 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Punto de Venta</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("~/bundles/maskedinput")
+    @Scripts.Render("~/bundles/selectpicker")
+    @Scripts.Render("~/bundles/blockIU")
+    @Scripts.Render("~/bundles/spinner")
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" id="linkSpinner">
+
+    <script type="text/javascript">
+        function nobackbutton() {
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button" //chrome
+            window.onhashchange = function () {
+                window.location.hash = "";
+            }
+        }
+    </script>
+</head>
+<body onload="nobackbutton()">
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    <div class="modal fade" id="mLoading" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center"><i class="fa fa-spin fa-spinner" style="font-size:24px; color: blue"></i> Procesando...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var mLoading = $("#mLoading");
+    </script>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

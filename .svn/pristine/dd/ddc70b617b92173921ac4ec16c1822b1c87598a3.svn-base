@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "Generar Pagaré";
+}
+
+<h2>Pagaré</h2>
+
+<table class="table table-responsive" align="left">
+    <tr>
+        <td>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-header">
+                            <h3>Paciente</h3>
+                        </div>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>Historia Medica:</td>
+                                <td>
+                                    <input type="text" id="txthistoria" data-bind="value:hmedica" class="form-control" value="15511-HO-1551" disabled="disabled" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nombre:</td>
+                                <td>
+                                    <input type="text" id="txtnombrepac" data-bind="value:nombre" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rut:</td>
+                                <td>
+                                    <input type="text" id="txtrutpac" data-bind="value:rut" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dirección:</td>
+                                <td>
+                                    <input type="text" id="txtdireccionpac" data-bind="value:direccion" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Departamento</td>
+                                <td>
+                                    <input type="text" id="txtdeptopac" data-bind="value:dpto" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Comuna:</td>
+                                <td>
+                                    <input type="text" id="txtcomunapac" data-bind="value:comuna" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ciudad:</td>
+                                <td>
+                                    <input type="text" id="txtciudadpac" data-bind="value:ciudad" class="form-control" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-header">
+                            <h3>Responsable de la Cuenta</h3>
+                        </div>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>Nombre:</td>
+                                <td>
+                                    <input type="text" id="txtnombreresp" data-bind="value:nombre" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rut:</td>
+                                <td>
+                                    <input type="text" id="txtrutresp" data-bind="value:rut" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dirección:</td>
+                                <td>
+                                    <input type="text" id="txtdireccionresp" data-bind="value:direccion" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Departamento</td>
+                                <td>
+                                    <input type="text" id="txtdeptoresp" data-bind="value:dpto" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Comuna:</td>
+                                <td>
+                                    <input type="text" id="txtcomunaresp" data-bind="value:comuna" class="form-control" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ciudad:</td>
+                                <td>
+                                    <input type="text" id="txtciudadresp" data-bind="value:ciudad" class="form-control" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" id="btncancelar" data-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-primary" id="btnguardar" data-bind="click:save">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </td>
+
+    </tr>
+</table>

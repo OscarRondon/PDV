@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Caja" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Caja/Caja.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Caja/Caja.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Caja/Caja.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICaja_GetListaCajas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCajas" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetListaCajas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCajasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AdministrarCaja_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCaja" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AdministrarCaja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AdministrarCajaMasivoSupervisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCajaMasivoSupervisor" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AdministrarCajaMasivoSupervisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdministrarCajaMasivoSupervisorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaByParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaByParams" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaByParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaByParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCaja_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCaja" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCaja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaCierre_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaCierre" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaCierre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaCierreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaAjusteCierre_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaAjusteCierre" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaAjusteCierre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaAjusteCierreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaMasivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaMasivo" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_AsignarCajaMasivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarCajaMasivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetListaCajaAsignadas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCajaAsignadas" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetListaCajaAsignadas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCajaAsignadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaAsignadaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaAsignadaById" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaAsignadaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaAsignadaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaMontoCierre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaMontoCierre" />
+  </wsdl:message>
+  <wsdl:message name="ICaja_GetCajaMontoCierre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCajaMontoCierreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICaja">
+    <wsdl:operation name="GetListaCajas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/GetListaCajas" message="tns:ICaja_GetListaCajas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/GetListaCajasResponse" message="tns:ICaja_GetListaCajas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCaja">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AdministrarCaja" message="tns:ICaja_AdministrarCaja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AdministrarCajaResponse" message="tns:ICaja_AdministrarCaja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCajaMasivoSupervisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AdministrarCajaMasivoSupervisor" message="tns:ICaja_AdministrarCajaMasivoSupervisor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AdministrarCajaMasivoSupervisorResponse" message="tns:ICaja_AdministrarCajaMasivoSupervisor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaByParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/GetCajaByParams" message="tns:ICaja_GetCajaByParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/GetCajaByParamsResponse" message="tns:ICaja_GetCajaByParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCaja">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AsignarCaja" message="tns:ICaja_AsignarCaja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AsignarCajaResponse" message="tns:ICaja_AsignarCaja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaCierre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AsignarCajaCierre" message="tns:ICaja_AsignarCajaCierre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AsignarCajaCierreResponse" message="tns:ICaja_AsignarCajaCierre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaAjusteCierre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AsignarCajaAjusteCierre" message="tns:ICaja_AsignarCajaAjusteCierre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AsignarCajaAjusteCierreResponse" message="tns:ICaja_AsignarCajaAjusteCierre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaMasivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/AsignarCajaMasivo" message="tns:ICaja_AsignarCajaMasivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/AsignarCajaMasivoResponse" message="tns:ICaja_AsignarCajaMasivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCajaAsignadas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/GetListaCajaAsignadas" message="tns:ICaja_GetListaCajaAsignadas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/GetListaCajaAsignadasResponse" message="tns:ICaja_GetListaCajaAsignadas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaAsignadaById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/GetCajaAsignadaById" message="tns:ICaja_GetCajaAsignadaById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/GetCajaAsignadaByIdResponse" message="tns:ICaja_GetCajaAsignadaById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaMontoCierre">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaja/GetCajaMontoCierre" message="tns:ICaja_GetCajaMontoCierre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaja/GetCajaMontoCierreResponse" message="tns:ICaja_GetCajaMontoCierre_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICaja" type="tns:ICaja">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListaCajas">
+      <soap:operation soapAction="http://tempuri.org/ICaja/GetListaCajas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCaja">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AdministrarCaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdministrarCajaMasivoSupervisor">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AdministrarCajaMasivoSupervisor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaByParams">
+      <soap:operation soapAction="http://tempuri.org/ICaja/GetCajaByParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCaja">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AsignarCaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaCierre">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AsignarCajaCierre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaAjusteCierre">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AsignarCajaAjusteCierre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarCajaMasivo">
+      <soap:operation soapAction="http://tempuri.org/ICaja/AsignarCajaMasivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCajaAsignadas">
+      <soap:operation soapAction="http://tempuri.org/ICaja/GetListaCajaAsignadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaAsignadaById">
+      <soap:operation soapAction="http://tempuri.org/ICaja/GetCajaAsignadaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCajaMontoCierre">
+      <soap:operation soapAction="http://tempuri.org/ICaja/GetCajaMontoCierre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Caja">
+    <wsdl:port name="BasicHttpBinding_ICaja" binding="tns:BasicHttpBinding_ICaja">
+      <soap:address location="http://172.16.98.189:1559/Caja/Caja.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

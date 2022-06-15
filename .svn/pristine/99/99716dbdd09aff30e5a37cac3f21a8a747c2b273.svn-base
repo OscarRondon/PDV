@@ -1,0 +1,435 @@
+﻿<style type="text/css">
+    #accountForm {
+        margin-top: 15px;
+    }
+</style>
+<br />
+<div class="container-fluid">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="col-md-2 control-label">Caja</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Caja" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="col-md-2 col-md-offset-6 control-label">Fecha</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Fecha" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <label class="col-md-2 col-md-offset-6 control-label">Folio</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Numero" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Panel ( Contenedor) -->
+                <div class="panel panel-primary">
+                    <!-- Div para el encabezado del panel -->
+                    <div class="panel-heading">Responsable</div>
+                    <!-- Div para el cuerpo del panel  -->
+                    <div class="panel-body">
+                        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="col-md-3 control-label small">RUT</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" name="rutResponsable" />
+                                    </div>
+                                </div>
+                                </div>
+                        <br/>
+                        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="col-md-3 control-label small">Nombre</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                    </div>
+                                </div>
+                                </div>
+                       
+                        <br />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="col-md-3 control-label small">Dirección</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="col-md-1 control-label small">Apt.</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                    </div>
+                                    <label class="col-md-3 control-label small">Comuna</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Panel ( Contenedor) -->
+                <div class="panel panel-primary">
+                    <!-- Div para el encabezado del panel -->
+                    <div class="panel-heading">Paciente</div>
+                    <!-- Div para el cuerpo del panel  -->
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-3 control-label small">RUT</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-sm" name="rutResponsable" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-3 control-label small">Nombre</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-3 control-label small">Historia clínica</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-3 control-label small">Dirección</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="col-md-1 control-label small">Apt.</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                </div>
+                                <label class="col-md-3 control-label small">Comuna</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control input-sm" name="nombreResponsable" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Panel ( Contenedor) -->
+                <div class="panel panel-primary">
+                    <!-- Div para el encabezado del panel -->
+                    <div class="panel-heading">General</div>
+                    <!-- Div para el cuerpo del panel  -->
+                    <div class="panel-body">
+                        <div class="panel-group">
+                            <div class="col-md-12">
+                                <table id="listaResponsables" class="cell-border display compact" cellspacing="0">
+                                    <thead class="thead-inverse">
+                                        <tr class="bg-info">
+                                            <th>Articulo</th>
+                                            <th>Descripción</th>
+                                            <th>CCosto</th>
+                                            <th>Cantidad</th>
+                                            <th>Valor Unitario</th>
+                                            <th>Total</th>
+                                            <th>Bono</th>
+                                            <th>Documentación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>501013</td>
+                                            <td>FLEBOTOMIA</td>
+                                            <td>5153</td>
+                                            <td>1</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>
+                                                <input type="button" id="btnSegmentar" value="Asociar" class="btn btn-primary" data-toggle="modal" data-target="#ModalBono" />
+                                            </td>
+                                            <td>
+                                                <input type="button" id="btnSegmentar" value="Agregar" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdjunto" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>901010</td>
+                                            <td>TAPA LIBRE</td>
+                                            <td>5151</td>
+                                            <td>1</td>
+                                            <td>500</td>
+                                            <td>500</td>
+                                            <td>
+                                                <input type="button" id="btnSegmentar" value="Asociar" class="btn btn-primary" data-toggle="modal" data-target="#ModalBono" />
+                                            </td>
+                                            <td>
+                                                <input type="button" id="btnSegmentar" value="Agregar" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdjunto" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <label class="col-md-3 col-md-offset-5 control-label">Sub total</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Fecha" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <label class="col-md-3 col-md-offset-5 control-label">Total Bonos</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Numero" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+                <label class="col-md-3 col-md-offset-5 control-label">Total pagar</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-sm" name="Numero" />
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="button" id="btnGuardar" value="Guardar" class="btn btn-primary" />
+                <input type="button" id="btnGuardar" value="Cancelar" class="btn btn-primary" />
+            </div>
+                <div class="col-md-6">
+                    <div class="col-md-4 col-md-offset-8">
+                        <input type="button" id="btnGuardar" value="Pagar" class="btn btn-primary" data-toggle="modal" data-target="#ModalAdjunto"/>
+                        <input type="button" id="btnCancelar" value="Anular" class="btn btn-primary" data-toggle="modal" data-target="#myModalHorizontal" />
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Solicitud de anulación
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               for="inputEmail3">Motivo</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"
+                                   id="inputEmail3" placeholder="Motivo de anulación" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <button type="button" class="btn btn-primary">
+                        Aceptar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalBono" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Registro de Bono
+                </h4>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               for="inputEmail3">Institución</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option value="1">FONASA</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               for="inputEmail3">Número</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"
+                                   id="inputEmail3" placeholder="Número de bono" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               for="inputEmail3">Valor</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"
+                                   id="inputEmail3" placeholder="Valor Bono" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <button type="button" class="btn btn-primary">
+                        Aceptar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAdjunto" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Cerrar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Registro de Bono
+                </h4>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"
+                               for="inputEmail3">Archivo</label>
+                        <div class="col-sm-10">
+                            <input id="input-6" name="input6[]" type="file" multiple class="file-loading">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <button type="button" class="btn btn-primary">
+                        Aceptar
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#listaResponsables').DataTable(
+                {
+                    "info": false,
+                    "paging": false,
+                    "searching": false,
+                    "ordering": false,
+                    "language": dataTableEspanol,
+                });
+
+            $('#listaResponsables')
+                .removeClass('display')
+                .addClass('table table-striped table-bordered');
+        });
+    </script>
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Nomina/Nomina.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+  <xs:element name="AdministrarNominaDetalleMasivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="detalles" nillable="true" type="q1:ArrayOfNominaDetalleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarNominaDetalleMasivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarNominaDetalleMasivoResult" nillable="true" type="q2:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarNominaSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q3:NominaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarNominaSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GenerarNominaSupervisorResult" nillable="true" type="q4:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNominaByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docEntryNomina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNominaByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetNominaByParamResult" nillable="true" type="q5:NominaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNominaSupervisorByParam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docEntryNomina" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNominaSupervisorByParamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetNominaSupervisorByParamResult" nillable="true" type="q6:NominaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q7:NominaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaNominasResult" nillable="true" type="q8:ArrayOfNominaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominaDetalleAprobados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q9:NominaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominaDetalleAprobadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaNominaDetalleAprobadosResult" nillable="true" type="q10:ArrayOfNominaDetalleType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominaSupervisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q11:NominaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaNominaSupervisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaNominaSupervisorResult" nillable="true" type="q12:ArrayOfNominaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

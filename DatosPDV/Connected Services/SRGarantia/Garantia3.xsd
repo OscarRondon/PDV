@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Garantia/Garantia.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+  <xs:element name="GetGarantiaById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idGarantia" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGarantiaByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetGarantiaByIdResult" nillable="true" type="q1:GarantiaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGarantiaByFiltro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q2:GarantiaFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaGarantiaByFiltroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaGarantiaByFiltroResult" nillable="true" type="q3:ArrayOfGarantiaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarGarantia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="garantia" nillable="true" type="q4:GarantiaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdministrarGarantiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AdministrarGarantiaResult" nillable="true" type="q5:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarEstadoGarantia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GarantiaId" type="xs:int" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="estado" type="q6:EstadoGarantia" />
+        <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarEstadoGarantiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CambiarEstadoGarantiaResult" nillable="true" type="q7:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AplicarAnticipoBoleta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="gar" nillable="true" type="q8:GarantiaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AplicarAnticipoBoletaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AplicarAnticipoBoletaResult" nillable="true" type="q9:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

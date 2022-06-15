@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Ventas" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Integracion/Ventas.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Integracion/Ventas.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.16.98.189:1559/Integracion/Ventas.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVentas_EmisionBoleta_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmisionBoleta" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_EmisionBoleta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmisionBoletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CuentaPaciente_InputMessage">
+    <wsdl:part name="parameters" element="tns:CuentaPaciente" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CuentaPaciente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CuentaPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CuentaPacienteJSON_InputMessage">
+    <wsdl:part name="parameters" element="tns:CuentaPacienteJSON" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CuentaPacienteJSON_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CuentaPacienteJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetEstadoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEstadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetEstadoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEstadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GenerarGarantia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarGarantia" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GenerarGarantia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarGarantiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarBoleta_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarBoleta" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarBoleta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarBoletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarFactura_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarFactura" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarFactura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarFacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarAsiento_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarAsiento" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarAsiento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarAsientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarAnticipo_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarAnticipo" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarAnticipo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarAnticipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarImed_InputMessage">
+    <wsdl:part name="parameters" element="tns:PagarImed" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_PagarImed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PagarImedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CrearArticulo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearArticulo" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CrearArticulo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearArticuloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_AnularVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:AnularVenta" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_AnularVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AnularVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CreacionPreFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreacionPreFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CreacionPreFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreacionPreFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaDocumentosPendientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentosPendientes" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaDocumentosPendientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDocumentosPendientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetDocumentoByDocEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentoByDocEntry" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetDocumentoByDocEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentoByDocEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_ImprimirDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImprimirDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_ImprimirDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImprimirDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaBoletasAbiertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaBoletasAbiertas" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaBoletasAbiertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaBoletasAbiertasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CobrarInasistancia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CobrarInasistancia" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CobrarInasistancia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CobrarInasistanciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetPagoRecibido_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagoRecibido" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetPagoRecibido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagoRecibidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaPagoRecibido_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaPagoRecibido" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_GetListaPagoRecibido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaPagoRecibidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CancelarPagoRecibido_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarPagoRecibido" />
+  </wsdl:message>
+  <wsdl:message name="IVentas_CancelarPagoRecibido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarPagoRecibidoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVentas">
+    <wsdl:operation name="EmisionBoleta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/EmisionBoleta" message="tns:IVentas_EmisionBoleta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/EmisionBoletaResponse" message="tns:IVentas_EmisionBoleta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CuentaPaciente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CuentaPaciente" message="tns:IVentas_CuentaPaciente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CuentaPacienteResponse" message="tns:IVentas_CuentaPaciente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CuentaPacienteJSON">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CuentaPacienteJSON" message="tns:IVentas_CuentaPacienteJSON_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CuentaPacienteJSONResponse" message="tns:IVentas_CuentaPacienteJSON_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEstadoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetEstadoCliente" message="tns:IVentas_GetEstadoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetEstadoClienteResponse" message="tns:IVentas_GetEstadoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarGarantia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GenerarGarantia" message="tns:IVentas_GenerarGarantia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GenerarGarantiaResponse" message="tns:IVentas_GenerarGarantia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarBoleta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/PagarBoleta" message="tns:IVentas_PagarBoleta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/PagarBoletaResponse" message="tns:IVentas_PagarBoleta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarFactura">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/PagarFactura" message="tns:IVentas_PagarFactura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/PagarFacturaResponse" message="tns:IVentas_PagarFactura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarAsiento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/PagarAsiento" message="tns:IVentas_PagarAsiento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/PagarAsientoResponse" message="tns:IVentas_PagarAsiento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarAnticipo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/PagarAnticipo" message="tns:IVentas_PagarAnticipo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/PagarAnticipoResponse" message="tns:IVentas_PagarAnticipo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PagarImed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/PagarImed" message="tns:IVentas_PagarImed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/PagarImedResponse" message="tns:IVentas_PagarImed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearArticulo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CrearArticulo" message="tns:IVentas_CrearArticulo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CrearArticuloResponse" message="tns:IVentas_CrearArticulo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/AnularVenta" message="tns:IVentas_AnularVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/AnularVentaResponse" message="tns:IVentas_AnularVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreacionPreFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CreacionPreFacturas" message="tns:IVentas_CreacionPreFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CreacionPreFacturasResponse" message="tns:IVentas_CreacionPreFacturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentosPendientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetListaDocumentosPendientes" message="tns:IVentas_GetListaDocumentosPendientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetListaDocumentosPendientesResponse" message="tns:IVentas_GetListaDocumentosPendientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoByDocEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetDocumentoByDocEntry" message="tns:IVentas_GetDocumentoByDocEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetDocumentoByDocEntryResponse" message="tns:IVentas_GetDocumentoByDocEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/ImprimirDocumento" message="tns:IVentas_ImprimirDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/ImprimirDocumentoResponse" message="tns:IVentas_ImprimirDocumento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaBoletasAbiertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetListaBoletasAbiertas" message="tns:IVentas_GetListaBoletasAbiertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetListaBoletasAbiertasResponse" message="tns:IVentas_GetListaBoletasAbiertas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CobrarInasistancia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CobrarInasistancia" message="tns:IVentas_CobrarInasistancia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CobrarInasistanciaResponse" message="tns:IVentas_CobrarInasistancia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagoRecibido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetPagoRecibido" message="tns:IVentas_GetPagoRecibido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetPagoRecibidoResponse" message="tns:IVentas_GetPagoRecibido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaPagoRecibido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/GetListaPagoRecibido" message="tns:IVentas_GetListaPagoRecibido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/GetListaPagoRecibidoResponse" message="tns:IVentas_GetListaPagoRecibido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarPagoRecibido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVentas/CancelarPagoRecibido" message="tns:IVentas_CancelarPagoRecibido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVentas/CancelarPagoRecibidoResponse" message="tns:IVentas_CancelarPagoRecibido_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IVentas" type="tns:IVentas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmisionBoleta">
+      <soap:operation soapAction="http://tempuri.org/IVentas/EmisionBoleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CuentaPaciente">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CuentaPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CuentaPacienteJSON">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CuentaPacienteJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEstadoCliente">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetEstadoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarGarantia">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GenerarGarantia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarBoleta">
+      <soap:operation soapAction="http://tempuri.org/IVentas/PagarBoleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarFactura">
+      <soap:operation soapAction="http://tempuri.org/IVentas/PagarFactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarAsiento">
+      <soap:operation soapAction="http://tempuri.org/IVentas/PagarAsiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarAnticipo">
+      <soap:operation soapAction="http://tempuri.org/IVentas/PagarAnticipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PagarImed">
+      <soap:operation soapAction="http://tempuri.org/IVentas/PagarImed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearArticulo">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CrearArticulo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularVenta">
+      <soap:operation soapAction="http://tempuri.org/IVentas/AnularVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreacionPreFacturas">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CreacionPreFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDocumentosPendientes">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetListaDocumentosPendientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentoByDocEntry">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetDocumentoByDocEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImprimirDocumento">
+      <soap:operation soapAction="http://tempuri.org/IVentas/ImprimirDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaBoletasAbiertas">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetListaBoletasAbiertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CobrarInasistancia">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CobrarInasistancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagoRecibido">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetPagoRecibido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaPagoRecibido">
+      <soap:operation soapAction="http://tempuri.org/IVentas/GetListaPagoRecibido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarPagoRecibido">
+      <soap:operation soapAction="http://tempuri.org/IVentas/CancelarPagoRecibido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Ventas">
+    <wsdl:port name="BasicHttpBinding_IVentas" binding="tns:BasicHttpBinding_IVentas">
+      <soap:address location="http://172.16.98.189:1559/Integracion/Ventas.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

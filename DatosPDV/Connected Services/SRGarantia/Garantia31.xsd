@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Garantia/Garantia.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GarantiaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comentario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiasVencimiento" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DocEntry" type="xs:int" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Entidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntidadNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Episodio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="tns:EstadoGarantia" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaVencimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FichaClinica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenerarCartaDescuento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAsignacionCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTrack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Impreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Indicador" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Monto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="NroCheque" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumDocBoleta" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PacienteApt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteComuna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteDirecc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacientePasaporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteRUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableApt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableComuna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableDirecc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsablePasaporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableRUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="U_NumPagRecib" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarantiaType" nillable="true" type="tns:GarantiaType" />
+  <xs:simpleType name="EstadoGarantia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Vencido">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoAsignado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Activo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Devuelto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Aplicado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lleno">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protesto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Anulado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EstadoGarantia" nillable="true" type="tns:EstadoGarantia" />
+  <xs:complexType name="GarantiaFilterType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocEntry" type="xs:int" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Episodio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="tns:EstadoGarantia" />
+      <xs:element minOccurs="0" name="FechaFinal" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdAsignacionCaja" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteRUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponsableRUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarantiaFilterType" nillable="true" type="tns:GarantiaFilterType" />
+  <xs:complexType name="ArrayOfGarantiaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarantiaType" nillable="true" type="tns:GarantiaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarantiaType" nillable="true" type="tns:ArrayOfGarantiaType" />
+  <xs:complexType name="RespuestaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Error" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdTrack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaType" nillable="true" type="tns:RespuestaType" />
+</xs:schema>

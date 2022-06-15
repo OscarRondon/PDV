@@ -1,0 +1,37 @@
+﻿@using EntidadesPDV.Usuario
+@{
+    List<UsuarioDV> listUsuario = (List<UsuarioDV>)ViewBag.ListadoUsuarios;
+}
+
+<script src="~/Scripts/HMS/Caja/AsignarSupervisorCajaModal.js"></script>
+
+<input type="hidden" id="cajasSeleccionadas" value="" />
+<div id="modalAsignaSupervisor" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Asignar caja a Supervisor</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="control-label">Asignar supervisor a las cajas seleccionadas:</label>
+                        <select id="UsuarioSupervisor" class="form-control">
+                            <option value="">Seleccione Usuario...</option>
+                            @foreach (var item in listUsuario)
+                            {
+                                <option value="@item.Login">@item.Nombre.ToUpper()</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick='AsignarSupervisorModal.GuardarFormulario()'>Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

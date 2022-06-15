@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Publicaciones\PDV</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/10/2019 11:17:52</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>07/10/2019 11:17:52</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="bin/Comunes.dll">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/Comunes.dll.config">
+      <publishTime>07/10/2019 11:17:33</publishTime>
+    </File>
+    <File Include="bin/Comunes.pdb">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>07/10/2019 11:18:03</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>11/19/2018 16:03:45</publishTime>
+    </File>
+    <File Include="bin/cs/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/cs/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/da/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/da/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/DatosPDV.dll">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/DatosPDV.dll.config">
+      <publishTime>07/10/2019 11:17:34</publishTime>
+    </File>
+    <File Include="bin/DatosPDV.pdb">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/de/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/de/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/en/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/en/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/EntidadesPDV.dll">
+      <publishTime>08/09/2019 09:59:19</publishTime>
+    </File>
+    <File Include="bin/EntidadesPDV.pdb">
+      <publishTime>08/09/2019 09:59:19</publishTime>
+    </File>
+    <File Include="bin/es/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/es/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Helpers.resources.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Mvc.resources.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Optimization.resources.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Razor.resources.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.resources.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/fi/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/fi/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/fr/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/fr/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/hu/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:01</publishTime>
+    </File>
+    <File Include="bin/hu/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/it/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/it/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/ja/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/ja/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/ko/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/ko/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>07/10/2019 11:18:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>07/10/2019 11:18:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>07/10/2019 11:18:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>07/10/2019 11:18:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>07/10/2019 11:18:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>07/10/2019 11:18:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>07/10/2019 11:18:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/10/2019 11:18:27</publishTime>
+    </File>
+    <File Include="bin/nb-NO/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/nb-NO/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/NegocioPDV.dll">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/NegocioPDV.dll.config">
+      <publishTime>07/10/2019 11:17:51</publishTime>
+    </File>
+    <File Include="bin/NegocioPDV.pdb">
+      <publishTime>08/09/2019 09:59:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/10/2019 11:18:28</publishTime>
+    </File>
+    <File Include="bin/nl/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/nl/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>07/10/2019 11:18:29</publishTime>
+    </File>
+    <File Include="bin/PDV.dll">
+      <publishTime>08/09/2019 09:59:26</publishTime>
+    </File>
+    <File Include="bin/PDV.pdb">
+      <publishTime>08/09/2019 09:59:26</publishTime>
+    </File>
+    <File Include="bin/pl/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/pl/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/pt/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/pt/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:04</publishTime>
+    </File>
+    <File Include="bin/ru/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/ru/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/sk/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/sk/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/sv/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/sv/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/10/2019 11:18:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2019 11:18:23</publishTime>
+    </File>
+    <File Include="bin/th/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/th/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/tr/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/tr/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/CrystalDecisions.CrystalReports.Engine.resources.dll">
+      <publishTime>07/10/2019 11:18:02</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/CrystalDecisions.Shared.resources.dll">
+      <publishTime>07/10/2019 11:18:05</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker-standalone.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-datetimepicker.min.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.css.map">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-select.min.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/Imagenes/details_close.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/details_open.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/icon_top.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/LogoHMS.jpg">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/sort_asc.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/sort_asc_disabled.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/sort_both.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/sort_desc.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/Imagenes/sort_desc_disabled.png">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="Content/jquery.dataTables.min.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/10/2019 11:18:32</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/10/2019 11:18:33</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/10/2019 11:18:31</publishTime>
+    </File>
+    <File Include="Reports/AgendaLlamados.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/AplicacionGarantia.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/ArqueoCaja2.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/AspReportViewer.aspx">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/BoletasAnuladas.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/BoletasEmitidas.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/BoletaServicioOki.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/BoletaServicios.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/ComprobantePago.rpt">
+      <publishTime>07/10/2019 11:18:34</publishTime>
+    </File>
+    <File Include="Reports/ComprobantePagoAnticipo.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/ComprobantePagoAsiento.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/DevolucionGarantia.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/DevolucionPagare.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/DocPendientes.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/EstadisticaBoletasAnuladas.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/EstadisticaBoletasEmitidas.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/FoliosGlobal.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/Informe.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/Mandato.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/NominaDetalle.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/NominaDetalleContado.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/NominaDetalleSupervisor.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/OrdenAtencion.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/OrdenAtencionORDR.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/OrdenAtencionSinCopago.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/Pagare.rpt">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Reports/PagareImpresion.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/PagosAnulados.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/Poder.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/ReciboGarantia.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/RendicionGarantias.rpt">
+      <publishTime>07/10/2019 11:18:35</publishTime>
+    </File>
+    <File Include="Reports/Reporte Ventas Piso-Fecha.rpt">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Reports/RESPUESTA.TXT">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootbox.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datetimepicker.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.js.map">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-select.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/HMS/AnticipoGarantia/AnticipoGarantia.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/HMS/AnticipoGarantia/DetallesGarantia.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/HMS/AnticipoGarantia/Devolucion.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/HMS/AnticipoGarantia/ListadosGarantias.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/HMS/AnticipoGarantia/ModalIngresoGarantia.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/AdministrarCajas.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/AdministrarCajasSupervisor.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/AsignarCajeroCajaModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/AsignarSupervisorCajaModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/CierreCaja.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/CierreCajaModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/CreaCajaModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/InicioCaja.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Caja/TransaccionesCajaModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/AnularFolio.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/AsignarCajaSegmentoModal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/CrearFolioModal.js">
+      <publishTime>07/31/2019 15:04:00</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/CrearLimiteModal.js">
+      <publishTime>07/31/2019 15:04:00</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/FolioPrincipal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/FolioPrincipalSupervisor.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/SolicitudesAnulacion.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Folio/SolicitudesAnulacionSupervisor.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Generales/Comunes.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Nomina/GenerarNomina.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Nomina/NominaDetalle.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Nomina/NominaPrincipal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Nomina/NominaSupervisorDetalle.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Nomina/NominaSupervisorPrincipal.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/AnularPago.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/AplicarAnticipo.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/CerrarCaja.js">
+      <publishTime>07/10/2019 11:18:38</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/DetalleVenta.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/MedioPago.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/NuevaGarantia.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/PuntoVenta/PendientePago.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/BoletasEmitidas.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/BoletasFolioCajas.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/DocumentosAbiertos.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/ReporteAnulacionGarantias.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/ReporteGlobalFolio.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/ReportePagoAnulado.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/Reportes.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/HMS/Reportes/ResumenArqueoCaja.js">
+      <publishTime>07/10/2019 11:18:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.min.map">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.1.slim.min.map">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.blockUI.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.maskedinput.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.Rut.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.spinner.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>07/10/2019 11:18:36</publishTime>
+    </File>
+    <File Include="Scripts/Mensajes.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/10/2019 11:18:37</publishTime>
+    </File>
+    <File Include="Views/Anticipo/DevolucionAnticipos.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Caja/AdministracionCajas.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Caja/AdministracionCajasSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Caja/CierreCaja.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Caja/InicioCaja.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/CargaArchivos/SubeArchivos.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Convenio/Pago.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Convenio/Recaudacion.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Documento/AnulacionDocumentos.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Documento/Index.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Folio/AdministracionFolio.cshtml">
+      <publishTime>07/31/2019 15:04:00</publishTime>
+    </File>
+    <File Include="Views/Folio/AdministracionFolioCaja.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Folio/AdministracionFolioSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Folio/SolicitudesAnulacion.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Folio/SolicitudesAnulacionSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Garantia/DevolucionGarantias.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/Garantia/Index.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Menu/_MenuParticial.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Nomina/AdministrarNominas.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Nomina/AdministrarNominasSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Nomina/GenerarNomina.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Pagare/Index.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/PuntoVenta/PuntoDeVenta.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/BoletasEmitidas.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/BoletasFolioCaja.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/PartidasAbiertas.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/ReporteAnulacionGarantias.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/ReporteGlobalFolio.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/ReportePagoAnulado.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Reports/ResumenArqueoCaja.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialAsignarCajaCajero.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialAsignarCajaSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialCajasAsignadasSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialCajasAsignadasSupervisorDia.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialCerrarCaja.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Caja/_PartialCrearCaja.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/Folio/_PartialAnularFolioRango.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Folio/_PartialAsignarCajaSegmento.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Folio/_PartialCrearFolio.cshtml">
+      <publishTime>07/31/2019 15:04:00</publishTime>
+    </File>
+    <File Include="Views/Shared/Folio/_PartialCrearLimite.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Garantia/_PartialDetallesGarantia.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Garantia/_PartialIngresarGarantia.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Garantia/_PartialListadoGarantiasIngresadas.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Nomina/_PartialNominaBusqueda.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Nomina/_PartialNominaDetalle.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Nomina/_PartialNominaDetalleSupervisor.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialAnularPago.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialAplicarAnticipo.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialCierreCaja.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialMedioPagoDefault.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialMedioPagoPagar.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialNuevaGarantia.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialPendientes.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialPendientesLista.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/PuntoVenta/_PartialVentaDetalle.cshtml">
+      <publishTime>07/10/2019 11:18:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutLogin.cshtml">
+      <publishTime>07/10/2019 11:18:43</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/10/2019 11:18:42</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/09/2019 09:59:27</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

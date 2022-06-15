@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="NoObjectListType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bancos" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Comunas" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="EstadoAsignacionCaja" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="EstadoDetalleNomina" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="EstadoGarantia" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Funcionalidades" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Funciones" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="MetodosDePago" nillable="true" type="tns:ArrayOfMetodoPagoType" />
+      <xs:element minOccurs="0" name="MotivoAnulacion" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Pisos" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Secciones" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="Tarjetas" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="TipoDocumentoDetalle" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="TipoGarantia" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="TipoNominaAdmisionista" nillable="true" type="tns:ArrayOfNoObjectType" />
+      <xs:element minOccurs="0" name="TipoNominaSupervisor" nillable="true" type="tns:ArrayOfNoObjectType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoObjectListType" nillable="true" type="tns:NoObjectListType" />
+  <xs:complexType name="ArrayOfNoObjectType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoObjectType" nillable="true" type="tns:NoObjectType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoObjectType" nillable="true" type="tns:ArrayOfNoObjectType" />
+  <xs:complexType name="NoObjectType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoObjectType" nillable="true" type="tns:NoObjectType" />
+  <xs:complexType name="ArrayOfMetodoPagoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetodoPagoType" nillable="true" type="tns:MetodoPagoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetodoPagoType" nillable="true" type="tns:ArrayOfMetodoPagoType" />
+  <xs:complexType name="MetodoPagoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cheque" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Efectivo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tarjeta" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Transferencia" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetodoPagoType" nillable="true" type="tns:MetodoPagoType" />
+</xs:schema>

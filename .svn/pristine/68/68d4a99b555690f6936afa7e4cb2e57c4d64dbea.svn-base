@@ -1,0 +1,35 @@
+﻿@model EntidadesPDV.Caja.AsignacionCaja
+@{
+ViewBag.Title = "Proceso de Cierre de Caja";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Cierre de Caja</h1>
+        </div>
+        <div class="panel-body">
+            <table id="listadoCajas" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+                <thead>
+                    <tr class="bg-info">
+                        <th>Caja</th>
+                        <th>Usuario</th>
+                        <th>Fecha<br />Asignaci&oacute;n</th>
+                        <th>Fecha<br />Inicio</th>
+                        <th>Fecha<br />Cierre</th>
+                        <th style="width: 1%">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/Caja/_PartialCerrarCaja.cshtml")
+
+@section scripts
+{
+    <script src="~/Scripts/HMS/Caja/CierreCaja.js"></script>
+}

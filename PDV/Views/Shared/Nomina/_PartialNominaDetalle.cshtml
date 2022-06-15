@@ -1,0 +1,48 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <table style="width:100%">
+            <tr>
+                <td style="font-weight: bold; width: 8%">Nómina N°:</td>
+                <td style="width: 8%"><span id="spnNumeroNomina"></span></td>
+                <td style="font-weight: bold; width: 9%">Tipo Nómina:</td>
+                <td style="width: 15%"><span id="spnTipoNomina"></span></td>
+                <td style="font-weight: bold; width: 10%">Admisionista:</td>
+                <td style="width: 20%"><span id="spnAdmisionista"></span></td>
+                <td style="font-weight: bold; width: 5%">Caja:</td>
+                <td style="width: 20%"><span id="spnCaja"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-body">
+        <table id="listaDetalleNomina" class="table table-striped table-hover table-condensed compact nowrap" style="width: 100%">
+            <thead>
+                <tr class="bg-info">
+                    <th>N° Folio</th>
+                    <th>Fecha</th>
+                    <th>Documento</th>
+                    <th>Medio de Pago</th>
+                    <th><span id="spnNumeroDocumento">N° Documento</span></th>
+                    <th>Rut Paciente</th>
+                    <th>Nombre Paciente</th>
+                    <th>Rut Titular</th>
+                    <th>Nombre Titular</th>
+                    <th>Ficha Clínica</th>
+                    <th>Episodio</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Comentario</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+    <div class="panel-footer text-right" style="display: none" id="pnlBotones">
+        <button type="button" class="btn btn-success btn-sm" id="btnAprobarTodos" onclick="NominaDetalle.ConfirmarAprobarTodas()"><span class="glyphicon glyphicon-ok"></span>&nbsp;Aprobar todos</button>
+        <button type="button" class="btn btn-danger btn-sm" id="btnRechazarTodos" onclick="NominaDetalle.ConfirmarRechazarTodas()"><span class="glyphicon glyphicon-remove"></span>&nbsp;Rechazar todos</button>
+
+        <button type="button" class="btn btn-primary btn-sm" id="btnGuardarAprobaciones" onclick="NominaDetalle.ValidarDocumentos()">Guardar documentos</button>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Scripts/HMS/Nomina/NominaDetalle.js"></script>

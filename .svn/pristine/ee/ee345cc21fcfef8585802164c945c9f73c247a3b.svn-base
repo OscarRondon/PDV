@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.16.98.189:1559/Integracion/Ventas.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" />
+  <xs:element name="EmisionBoleta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="boleta" nillable="true" type="q1:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmisionBoletaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="EmisionBoletaResult" nillable="true" type="q2:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuentaPaciente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="pRequest" nillable="true" type="q3:PatientBillingEventERP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuentaPacienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CuentaPacienteResult" nillable="true" type="q4:ResponseEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuentaPacienteJSON">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pRequest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CuentaPacienteJSONResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CuentaPacienteJSONResult" nillable="true" type="q5:ResponseEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstadoCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rut" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sociedad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstadoClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEstadoClienteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarGarantia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="garantia" nillable="true" type="q6:WarrantyEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarGarantiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GenerarGarantiaResult" nillable="true" type="q7:ResponseEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarBoleta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="boletaPagar" nillable="true" type="q8:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarBoletaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="PagarBoletaResult" nillable="true" type="q9:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarFactura">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="facturaPagar" nillable="true" type="q10:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarFacturaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="PagarFacturaResult" nillable="true" type="q11:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarAsiento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="asientoPagar" nillable="true" type="q12:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarAsientoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="PagarAsientoResult" nillable="true" type="q13:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarAnticipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="anticipoPagar" nillable="true" type="q14:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarAnticipoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="PagarAnticipoResult" nillable="true" type="q15:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarImed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="imedPagar" nillable="true" type="q16:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PagarImedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="PagarImedResult" nillable="true" type="q17:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearArticulo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="pRequest" nillable="true" type="q18:StockMaster" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearArticuloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CrearArticuloResult" nillable="true" type="q19:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="anularPago" nillable="true" type="q20:PatientBillingEventERP" />
+        <xs:element minOccurs="0" name="idTransaccion" type="xs:int" />
+        <xs:element minOccurs="0" name="observacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AsignacionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnularVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="AnularVentaResult" nillable="true" type="q21:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreacionPreFacturas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="pRequest" nillable="true" type="q22:PatientBillingEventERP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreacionPreFacturasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CreacionPreFacturasResult" nillable="true" type="q23:ResponseEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDocumentosPendientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="filtro" nillable="true" type="q24:DocumentFilterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaDocumentosPendientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaDocumentosPendientesResult" nillable="true" type="q25:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentoByDocEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docentry" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentoByDocEntryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetDocumentoByDocEntryResult" nillable="true" type="q26:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImprimirDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idTrack" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idAsignacionCaja" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ImprimirDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="ImprimirDocumentoResult" nillable="true" type="q27:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaBoletasAbiertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="boletaSearch" nillable="true" type="q28:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaBoletasAbiertasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaBoletasAbiertasResult" nillable="true" type="q29:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CobrarInasistancia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pRequest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CobrarInasistanciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CobrarInasistanciaResult" nillable="true" type="q30:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagoRecibido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docEntry" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPagoRecibidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetPagoRecibidoResult" nillable="true" type="q31:DocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaPagoRecibido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DocumentoId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentoLinea" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="TrackId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListaPagoRecibidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="GetListaPagoRecibidoResult" nillable="true" type="q32:ArrayOfDocumentType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarPagoRecibido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="cancelarPago" nillable="true" type="q33:PagoCanceladoType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarPagoRecibidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" minOccurs="0" name="CancelarPagoRecibidoResult" nillable="true" type="q34:RespuestaType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

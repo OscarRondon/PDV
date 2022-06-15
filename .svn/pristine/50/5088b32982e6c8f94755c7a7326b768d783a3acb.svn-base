@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PDVWebService.Mensajes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfNominaDetalleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NominaDetalleType" nillable="true" type="tns:NominaDetalleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNominaDetalleType" nillable="true" type="tns:ArrayOfNominaDetalleType" />
+  <xs:complexType name="NominaDetalleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdmisionistaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CajaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocEntry" type="xs:int" />
+      <xs:element minOccurs="0" name="Episodio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoResponsable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAprobacionResponsable" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaAprobacionSupervisor" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDocumento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaOrdenAtencion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FichaClinica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineaDetalle" type="xs:int" />
+      <xs:element minOccurs="0" name="MontoPago" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="NumeroDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroNomina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroNominaSupervisor" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroOrdenAtencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSAP" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ObservacionResponsable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionSupervisor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteCategoria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PacienteRut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubTipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumentoDescripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumentoSAP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitularNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitularRut" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnidadCobroEpisodio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnidadCobroPaciente" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NominaDetalleType" nillable="true" type="tns:NominaDetalleType" />
+  <xs:complexType name="RespuestaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Error" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdTrack" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaType" nillable="true" type="tns:RespuestaType" />
+  <xs:complexType name="NominaFilterType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CajaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoDetalleNomina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDesde" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaHasta" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NominaId" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDesde" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroHasta" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OcultarAprobados" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PisoId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeccionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAtencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoNomina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioPerfil" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NominaFilterType" nillable="true" type="tns:NominaFilterType" />
+  <xs:complexType name="NominaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsignacionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CajaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CajaNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleNomina" nillable="true" type="tns:ArrayOfNominaDetalleType" />
+      <xs:element minOccurs="0" name="DocEntry" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumeroNomina" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SupervisorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupervisorNombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAntencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAntencionDescripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoNomina" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoNominaDescripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalDetalle" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDetalleAnulado" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDetalleAprobado" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDetallePendiente" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDetalleRechazado" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioNombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NominaType" nillable="true" type="tns:NominaType" />
+  <xs:complexType name="ArrayOfNominaType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NominaType" nillable="true" type="tns:NominaType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNominaType" nillable="true" type="tns:ArrayOfNominaType" />
+</xs:schema>

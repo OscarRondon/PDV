@@ -1,0 +1,114 @@
+﻿@using EntidadesPDV;
+@using EntidadesPDV.Usuario;
+@{
+    List<UsuarioDV> listUsuario = (List<UsuarioDV>)ViewBag.ListadoUsuarios;
+
+    List<ItemList> LstFuncionalidad = ViewBag.ListaFuncionalidades;
+    List<ItemList> LstFuncion = ViewBag.ListaFunciones;
+    List<ItemList> LstSeccion = ViewBag.ListaSecciones;
+    List<ItemList> LstPiso = ViewBag.ListaPisos;
+}
+<script src="~/Scripts/HMS/Caja/CreaCajaModal.js"></script>
+
+<input type="hidden" id="cajaGuardado" value="0" />
+<input type="hidden" id="idCaja" value="" />
+<div id="modalAgregarCaja" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title"><span id="tituloModalCreaCaja">Agregar</span> Caja</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="control-label">* Identificación:</label>
+                            <input id="NombreCaja" class="form-control" placeholder="Ingrese nombre de caja" maxlength="100" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">* Funcionalidad:</label>
+                            <select id="FuncionalidadCaja" class="form-control">
+                                <option value="">Seleccione funcionalidad...</option>
+                                @foreach (var item in LstFuncionalidad)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <div class="col-md-6">
+                            <label class="control-label">* Función:</label>
+                            <select id="FuncionCaja" class="form-control">
+                                <option value="">Seleccione función...</option>
+                                @foreach (var item in LstFuncion)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">* Sección:</label>
+                            <select id="SeccionCaja" class="form-control">
+                                <option value="">Seleccione sección...</option>
+                                @foreach (var item in LstSeccion)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <div class="col-md-6">
+                            <label class="control-label">* Piso Caja:</label>
+                            <select id="PisoCaja" class="form-control">
+                                <option value="">Seleccione piso...</option>
+                                @foreach (var item in LstPiso)
+                                {
+                                    <option value="@item.Codigo">@item.Descripcion</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">* N° IP:</label>
+                            <input id="IpCaja" class="form-control ip_address" placeholder="Ingrese IP de caja (Ej. 1.1.1.1)" maxlength="15" />
+                        </div>
+                        <div class="col-md-6" style="display:none">
+                            <label class="control-label">* N° MAC:</label>
+                            <input id="MacCaja" class="form-control" placeholder="Ingrese MAC de caja (Ej. 10:AE:10:AE)" maxlength="15" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <div class="col-md-6">
+                            <label class="control-label">Habilita:</label>
+                            <div class="col-sm-12 text-center">
+                                <input type="radio" name="habilitaCaja" value="true"><label>&nbsp;&nbsp;Sí</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="habilitaCaja" value="false"><label>&nbsp;&nbsp;No</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">Usuario Supervisor:</label>
+                            <select id="UsuarioAsignado" class="form-control">
+                                <option value="">Seleccione Usuario...</option>
+                                @if (listUsuario != null)
+                                {
+                                    foreach (var item in listUsuario)
+                                    {
+                                        <option value="@item.Login">@item.Nombre.ToUpper()</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick="CreaCajaModal.GuardarFormulario()">Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" onclick="CreaCajaModal.LimpiarFormulario()">Limpiar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

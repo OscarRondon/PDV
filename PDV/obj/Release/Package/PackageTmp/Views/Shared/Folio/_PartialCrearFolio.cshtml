@@ -1,0 +1,86 @@
+﻿@using EntidadesPDV.Usuario
+@{
+    List<UsuarioDV> listUsuario = (List<UsuarioDV>)ViewBag.ListadoUsuarios;
+
+    Dictionary<string, string> listDoc = new Dictionary<string, string>();
+    if (ViewBag.ListaDocumentos != null)
+    {
+        listDoc = ViewBag.ListaDocumentos;
+    }
+}
+<script src="~/Scripts/HMS/Folio/CrearFolioModal.js"></script>
+
+<input id="idFolio" value="" type="hidden" />
+<input id="folioGuardado" value="0" type="hidden" />
+
+<div id="modalAgregarFolio" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title"><span id="tituloModalCrearFolio">Agregar</span> rango de folios</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <label class="col-sm-4 control-label">Documento</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+                            <select id="ddlTipoDocumento" class="form-control">
+                                @if (listDoc != null && listDoc.Count > 0)
+                                {
+                                    <option value="">Seleccione...</option>
+                                    foreach (var item in listDoc)
+                                    {
+                                        <option value="@item.Key">@item.Value</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">Sin datos...</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <label class="col-sm-4 control-label">Folio inicial</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon">N°</span>
+                            <input placeholder="Folio inicial" id="txtFolioInicialNuevo" class="form-control text-right" onkeyup="PDV.SoloNumero(this);" maxlength="15" readonly />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <label class="col-sm-4 control-label">Folio final</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon">N°</span>
+                            <input placeholder="Folio final" id="txtFolioFinalNuevo" onkeyup="PDV.SoloNumero(this);" class="form-control text-right" maxlength="15" />
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px">
+                        <label class="col-sm-4 control-label">Usuario Supervisor:</label>
+                        <div class="input-group col-sm-8">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <select id="ddlUsuarioAsignado" class="form-control">
+                                <option value="">Seleccione Usuario...</option>
+                                @if (listUsuario != null)
+                                {
+                                    foreach (var item in listUsuario)
+                                    {
+                                        <option value="@item.Login">@item.Nombre.ToUpper()</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick="CrearFolioModal.GuardarFormulario()">Guardar</button>
+                <button type="button" class="btn btn-default btn-sm" onclick="CrearFolioModal.Limpiar()" id="btnLimpiarFolioNuevo">Limpiar</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+
+    </div>
+</div>

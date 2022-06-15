@@ -1,0 +1,52 @@
+﻿@using EntidadesPDV;
+@{
+    List<ItemList> LstBancos = ViewBag.ListaBancos;
+}
+<input type="hidden" class="form-control text-right textUpperTrim" id="txtMontoFactura"  style="display:none" readonly="readonly"/>
+<input type="hidden" class="form-control text-right textUpperTrim" id="txtBoletaAfecta" style="display:none" readonly="readonly" />
+<div id="ModalAplicarAnticipo" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                <h4 class="panel-title">Aplicar Anticipo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="padding-top: 0px; padding-bottom: 0px">
+                    <div class="col-sm-2">
+                        <label class="control-label">Rut responsable:</label>
+                        <input type="text" class="form-control text-right textUpperTrim" id="txtAplicarResponsableRut" placeholder="Rut" style="max-width: none" readonly="readonly" maxlength="20" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">Nombre responsable:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtAplicarResponsableNombre" placeholder="Nombre" style="max-width: none" readonly="readonly" maxlength="150" />
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="control-label">Episodio:</label>
+                        <input type="text" class="form-control textUpperTrim" id="txtAplicarEpisodio" placeholder="Episodio" style="max-width: none" readonly="readonly" maxlength="30" />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                    <div class="col-sm-12">
+                        <table id="listaAnticipos" class="table table-striped compact" style="text-align:center">
+                            <thead>
+                                <tr class="bg-info">
+                                    <th>N&uacute;mero</th>
+                                    <th>Fecha</th>
+                                    <th>Monto</th>
+                                    <th>Acci&oacute;n<br /></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-right">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/HMS/PuntoVenta/AplicarAnticipo.js"></script>

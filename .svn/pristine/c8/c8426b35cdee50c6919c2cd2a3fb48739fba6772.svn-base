@@ -1,0 +1,108 @@
+﻿@{
+    List<EntidadesPDV.PuntoVenta.MediosPagoEnt> LstMediosPago = ViewBag.ListaMediosDePago;
+}
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-weight:bold">Detalles de la Transacción</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-2"><label>Paciente:</label></div>
+                <div class="col-sm-4">
+                    <input id="txtNombreCompletoPaciente" class="form-control" disabled style="max-width: none" />
+                </div>
+                <div class="col-sm-2"><label>Cubierto:</label></div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" disabled id="txtMontoCubierto" style="max-width: none" />
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-top: 5px"><label>Responsable:</label></div>
+                <div class="col-sm-4" style="padding-top: 5px">
+                    <input id="txtNombreCompletoResponsable" class="form-control" disabled style="max-width: none" />
+                </div>
+                <div class="col-sm-2" style="padding-top: 5px"><label>Monto a Pagar:</label></div>
+                <div class="col-sm-4" style="padding-top: 5px">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" disabled id="txtMontoPago" style="max-width: none" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" style="color:black; font-weight:bold">Medios de Pago</div>
+        <div class="panel-body">
+            <div class="form-horizontal" role="form">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label>Agregar medio de pago:</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="ddlFormaPago" class="form-control" style="max-width: none">
+                            @if (LstMediosPago != null && LstMediosPago.Count > 0)
+                            {
+
+                            <option value="">Seleccione...</option>
+                                foreach (var item in LstMediosPago)
+                                {
+                                    string text = item.MedioPago.ToLower();
+                                    int panel = text.Contains("vale") || text.Contains("vista") ? 6 :
+                                        (text.Contains("debito") || text.Contains("débito") ? 5 :
+                                        (item.Transferencia ? 4 :
+                                        (item.Cheque ? 3 :
+                                        (item.Tarjeta ? 2 :
+                                        (item.Efectivo ? 1 : 0)))));
+                            <option value="@item.IdMedioPago" data-panel="@panel">@item.MedioPago</option>
+                                }
+                            }
+                            else
+                            {
+                            <option value="">Sin datos...</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-sm" id="btnAgregarFormaPago" onclick="MedioPago.PagoAgregarMedioPago();">Agregar</button>
+                    </div>
+                </div>
+                <br />
+                <table class="table" id="listPagos">
+                    <thead>
+                        <tr>
+                            <th width="20%">Medio de Pago</th>
+                            <th>Tarjeta</th>
+                            <th>Banco</th>
+                            <th>Fecha</th>
+                            <th>Documento</th>
+                            <th>Monto</th>
+                            <th>Acci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <label class="col-sm-10">Total:</label>
+                        <input type="text" class="control-label col-sm-2 text-right" disabled id="lblPagoTotal"/>
+                    </div>
+                    <div class="col-sm-12 text-right">
+                        <label class="col-sm-10">Pendiente:</label>
+                        <input type="text" class="control-label col-sm-2 text-right" disabled id="lblPagoPendi"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-footer text-right">
+            <button type="button" class="btn btn-primary btn-sm" id="btnConfirmarVenta" onclick="MedioPago.PagoValidarConfirmarVenta()">Confirmar Pago</button>
+
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/PuntoVenta/_PartialMedioPagoPagar.cshtml")
+
+<script src="~/Scripts/HMS/PuntoVenta/MedioPago.js"></script>

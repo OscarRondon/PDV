@@ -1,0 +1,77 @@
+﻿@model EntidadesPDV.Caja.AsignacionCaja
+@{
+    ViewBag.Title = "Punto De Venta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<input type="hidden" id="idCaja" value="@Model.CajaAsignada.IdCaja" />
+<input type="hidden" id="nombreCaja" value="@Model.CajaAsignada.IdentificacionCaja" />
+<input type="hidden" id="idAsignacion" value="@Model.IdAsignacion" />
+<input type="hidden" id="estadoCaja" value="@Model.EstadoDescripcion" />
+
+<input type="hidden" id="pnlPagoActivo" value="pnlPagoPendiente" />
+
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelDatosCaja">
+        <table style="width:100%">
+            <tr>
+                <td>Datos de caja:</td>
+                <td style="text-align: right"><span id="iconoDatosCaja" class="glyphicon glyphicon-menu-up"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div id="panelDatosCaja" class="panel-collapse in">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="col-sm-5">Nombre Caja</label>:&nbsp;@Model.CajaAsignada.IdentificacionCaja
+                </div>
+                <div class="col-sm-4">
+                    <label class="col-sm-4">Estado</label>:&nbsp;@Model.EstadoDescripcion
+                </div>
+                <div class="col-sm-4">
+                    <label class="col-sm-4">Supervisor</label>:&nbsp;@Model.CajaAsignada.SupervisorCaja
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="col-sm-5">Funcionalidad</label>:&nbsp;@Model.CajaAsignada.FuncionalidadCaja
+                </div>
+                <div class="col-sm-4">
+                    <label class="col-sm-4">Fecha Inicio</label>:&nbsp;@Model.FechaInicioTexto
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="nav nav-tabs">
+    <li class="active"> <a data-toggle="tab" href="#pendientePago" data-panelpago="pnlPagoPendiente">Ventas &nbsp;<span class="glyphicon glyphicon-usd"></span></a></li>
+    <li>                <a data-toggle="tab" href="#garantias" onclick="GarantiaListado.BuscarListaGarantias();">Garantías &nbsp;<span class="glyphicon glyphicon-list"></span></a></li>
+    <li>                <a data-toggle="tab" href="#cerrarcaja" onclick="Cierre.BuscarMontosCierre();">Cerrar Caja &nbsp;<span class="glyphicon glyphicon-off"></span></a></li>
+</ul>
+
+<div class="tab-content table-bordered">
+    <div id="pendientePago" class="tab-pane fade in active table-bordered" style="padding: 10px 10px 10px 10px">
+        @Html.Partial("~/Views/Shared/PuntoVenta/_PartialPendientes.cshtml", Model)
+    </div>
+    <div id="garantias" class="tab-pane fade table-bordered" style="padding: 10px 10px 10px 10px">
+        @Html.Partial("~/Views/Shared/Garantia/_PartialListadoGarantiasIngresadas.cshtml")
+    </div>
+    <div id="cerrarcaja" class="tab-pane fade table-bordered" style="padding: 10px 10px 10px 10px">
+        @Html.Partial("~/Views/Shared/PuntoVenta/_PartialCierreCaja.cshtml", Model)
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetPanelActivo();
+
+        $('#panelDatosCaja').on('hide.bs.collapse', function (e) {
+            $("#iconoDatosCaja").removeClass("glyphicon-menu-up");
+            $("#iconoDatosCaja").addClass("glyphicon-menu-down");
+        });
+        $('#panelDatosCaja').on('show.bs.collapse', function (e) {
+            $("#iconoDatosCaja").removeClass("glyphicon-menu-down");
+            $("#iconoDatosCaja").addClass("glyphicon-menu-up");
+        });
+    });
+</script>

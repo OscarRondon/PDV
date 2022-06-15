@@ -1,0 +1,214 @@
+﻿@using EntidadesPDV;
+@using EntidadesPDV.Usuario;
+@using EntidadesPDV.Caja;
+@{
+    List<ItemList> LstTipoNomina = ViewBag.ListaTipoNomina == null ? new List<ItemList>() : ViewBag.ListaTipoNomina;
+    List<ItemList> LstEstadoDetalle = ViewBag.ListaEstadosNominaDetalle == null ? new List<ItemList>() : ViewBag.ListaEstadosNominaDetalle;
+    List<CajasEnt> LstCajas = ViewBag.ListaCajasSupervisor == null ? new List<CajasEnt>() : ViewBag.ListaCajasSupervisor;
+
+
+    List<ItemList> LstFuncion = ViewBag.ListaFunciones == null ? new List<ItemList>() : ViewBag.ListaFunciones;
+    List<ItemList> LstPiso = ViewBag.ListaPisos == null ? new List<ItemList>() : ViewBag.ListaPisos;
+    List<ItemList> LstSeccion = ViewBag.ListaSecciones == null ? new List<ItemList>() : ViewBag.ListaSecciones;
+
+    UsuarioDV usuario = ViewBag.Usuario == null ? new UsuarioDV() : ViewBag.Usuario;
+
+    int EsRevisor = usuario.TienePerfil(PerfilUsuario.AnalistaAprobacion) ||
+                    usuario.TienePerfil(PerfilUsuario.SupervisorCaja) ||
+                    usuario.TienePerfil(PerfilUsuario.SupervisorGarantia) ||
+                    usuario.TienePerfil(PerfilUsuario.SupervisorRecaudador) ||
+                    usuario.TienePerfil(PerfilUsuario.SupervisorTesoreria) ||
+                    usuario.TienePerfil(PerfilUsuario.SupervisorCuentaHospitalaria) ? 1 : 0;
+}
+<input type="hidden" value="@EsRevisor" id="EsRevisor" />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-weight:bold; cursor: pointer" data-toggle="collapse" href="#panelFiltro">
+        <table style="width:100%">
+            <tr>
+                <td>Filtro búsqueda:</td>
+                <td style="text-align: right"><span id="iconoFiltro" class="glyphicon glyphicon-menu-down"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div id="panelFiltro" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="row" style="padding-right: 10px">
+                <div class="col-sm-4">
+                    <label class="control-label">N° Nómina :</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">desde</span>
+                        <input type="text" class="form-control text-right" style="max-width:none" id="txtNominaDesde" placeholder="Nómina inicial" onkeyup="PDV.SoloNumero(this)" maxlength="15" />
+                        <span class="input-group-addon">hasta</span>
+                        <input type="text" class="form-control text-right" style="max-width:none" id="txtNominaHasta" placeholder="Nómina final" onkeyup="PDV.SoloNumero(this)" maxlength="15" />
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-right: 0px">
+                    <label class="control-label">Desde :</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaDesde" placeholder="Fecha inicial" title="Fecha inicial" readonly />
+                        <button class="input-group-addon" id="btnFechaDesde" title="Fecha inicial"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-left: 0px">
+                    <label class="control-label">Hasta :</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control datetime" style="max-width:none" id="txtFechaHasta" placeholder="Fecha término" title="Fecha término" readonly />
+                        <button class="input-group-addon" id="btnFechaHasta" title="Fecha término"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </div>
+                </div>
+                @if (usuario.TienePerfil(PerfilUsuario.Admisionista) ||
+usuario.TienePerfil(PerfilUsuario.AnalistaAprobacion))
+                {
+                    <div class="col-sm-4">
+                        <label class="control-label">Tipo Nómina :</label>
+                        <select id="ddlTipoNomina" class="form-control" style="max-width:none">
+                            <option value="">Todos...</option>
+                            @foreach (var item in LstTipoNomina)
+                            {
+                                <option value="@item.Codigo">@item.Descripcion</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <select id="ddlTipoNomina" class="form-control" style="display:none"><option value="">Todos...</option></select>
+                }
+
+                @if (usuario.TienePerfil(PerfilUsuario.SupervisorRecaudador) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorGarantia))
+                {
+                    <div class="col-sm-4">
+                        <label class="control-label">Tipo Atención :</label>
+                        <select id="ddlFuncion" class="form-control" style="max-width:none">
+                            <option value="">Todos...</option>
+                            @foreach (var item in LstFuncion)
+                            {
+                                <option value="@item.Codigo">@item.Descripcion</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <select id="ddlFuncion" class="form-control" style="display:none"><option value="">Todos...</option></select>
+                }
+
+                @if (usuario.TienePerfil(PerfilUsuario.SupervisorCaja) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorRecaudador) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorGarantia))
+                {
+                    <div class="col-sm-4">
+                        <label class="control-label">Cajas :</label>
+                        <select id="ddlCajas" class="form-control" style="max-width:none">
+                            <option value="">Todas...</option>
+                            @foreach (var item in LstCajas)
+                            {
+                                <option value="@item.IdCaja">@item.IdentificacionCaja</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <select id="ddlCajas" class="form-control" style="display:none"><option value="">Todas...</option></select>
+                }
+                @if (usuario.TienePerfil(PerfilUsuario.SupervisorCaja) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorRecaudador) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorGarantia) ||
+usuario.TienePerfil(PerfilUsuario.AnalistaAprobacion))
+                {
+                    <div class="col-sm-4">
+                        <label class="control-label">Piso :</label>
+                        <select id="ddlPiso" class="form-control" style="max-width:none">
+                            <option value="">Todos...</option>
+                            @foreach (var item in LstPiso)
+                            {
+                                <option value="@item.Codigo">@item.Descripcion</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <select id="ddlPiso" class="form-control" style="display:none"><option value="">Todos...</option></select>
+                }
+                @if (usuario.TienePerfil(PerfilUsuario.SupervisorCaja) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorRecaudador) ||
+usuario.TienePerfil(PerfilUsuario.SupervisorGarantia) ||
+usuario.TienePerfil(PerfilUsuario.AnalistaAprobacion))
+                {
+                    <div class="col-sm-4">
+                        <label class="control-label">Sección :</label>
+                        <select id="ddlSeccion" class="form-control" style="max-width:none">
+                            <option value="">Todos...</option>
+                            @foreach (var item in LstSeccion)
+                            {
+                                <option value="@item.Codigo">@item.Descripcion</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <select id="ddlSeccion" class="form-control" style="display:none"><option value="">Todos...</option></select>
+                }
+                <div class="col-sm-4">
+                    <label class="control-label">Estado :</label>
+                    <select id="ddlEstado" class="form-control" style="max-width:none">
+                        <option value="">Todos...</option>
+                        @foreach (var item in LstEstadoDetalle)
+                        {
+                            <option value="@item.Codigo">@item.Descripcion</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <button class="btn btn-default btn-sm" id="btnLimpiarBusquedaNomina" title="Limpiar filtro de búsqueda" onclick="NominaPrincipal.LimpiarBusquedaNomina();">&nbsp;Limpiar</button>
+            <button class="btn btn-primary btn-sm" id="btnBuscarNomina" title="Buscar" onclick="NominaPrincipal.BuscarNominas();"><span class="glyphicon glyphicon-search"></span>&nbsp;Buscar</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#txtFechaDesde').datetimepicker({
+            format: "DD/MM/YYYY",
+            ignoreReadonly: true,
+            showTodayButton: true,
+            allowInputToggle: true,
+            locale: "es"
+        });
+        $('#txtFechaHasta').datetimepicker({
+            format: "DD/MM/YYYY",
+            ignoreReadonly: true,
+            showTodayButton: true,
+            allowInputToggle: true,
+            //JMuseCurrent: false,//Important! See issue #1075, se usa solo cuanto esta vacia la fecha
+            locale: "es"
+        });
+        $('#txtFechaDesde').on('dp.change', function (e) {
+            $('#txtFechaHasta').data('DateTimePicker').minDate(e.date);
+        });
+        $('#txtFechaHasta').on('dp.change', function (e) {
+            $('#txtFechaDesde').data('DateTimePicker').maxDate(e.date);
+        });
+
+        $('#btnFechaDesde').click(function () {
+            $('#txtFechaDesde').focus();
+        });
+        $('#btnFechaHasta').click(function () {
+            $('#txtFechaHasta').focus();
+        });
+
+        $('#panelFiltro').on('hide.bs.collapse', function (e) {
+            $("#iconoFiltro").removeClass("glyphicon-menu-up");
+            $("#iconoFiltro").addClass("glyphicon-menu-down");
+        });
+        $('#panelFiltro').on('show.bs.collapse', function (e) {
+            $("#iconoFiltro").removeClass("glyphicon-menu-down");
+            $("#iconoFiltro").addClass("glyphicon-menu-up");
+        });
+    });
+</script>

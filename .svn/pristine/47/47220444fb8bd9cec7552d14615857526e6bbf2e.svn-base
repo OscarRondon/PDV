@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "DevolucionDeAnticipos";
+}
+
+<h3>Solicitud De Devolucion de Anticipos</h3>
+
+<div class="modal-dialog">
+    <div class="modal-body">
+        <div class="modal-header">
+            <h4>Paciente</h4>
+        </div>
+        <div class="container">
+            <div class="col-xs-6 col-md-1">
+                <H6>Rut</H6>
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <input type="text" id="txtrut" data-bind="value:rut" class="form-control" placeholder="Ej: 12345678-1" maxlength="10" />
+            </div>
+            <div class="col-xs-6 col-md-2">
+                <button class="btn btn-success" id="btnbuscar" data-bind="click:buscar">Buscar</button>
+            </div>
+        </div>
+        <div>
+            <h4> </h4>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <table id="tbldevolucion" class="table table-striped table-bordered dt-responsive nowrap">
+        <thead>
+            <tr>
+                <th>Tipo Documento</th>
+                <th>Valor ($)</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Documento 1</td>
+            <td>$35.000</td>
+        </tr>
+        <tr>
+            <td>Documento 2</td>
+            <td>$20.000</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    <div class="col-xs-2 col-md-2">
+        <H6>Monto Cancelado</H6>
+        <input type="text" id="txtmonto" data-bind="value:mc" class="form-control" disabled="disabled" placeholder="$80.000" />
+    </div>
+
+    <div class="col-xs-2 col-md-2">
+        <H6>Medio de pago</H6>
+        <input type="text" id="txtmedio" data-bind="value:mp" class="form-control" disabled="disabled" placeholder="Efectivo" />
+    </div>
+
+    <div class="col-xs-2 col-md-2">
+        <H6>Devolucion Pactada</H6>
+        <input type="text" id="txtdevolucion" data-bind="value:dp" class="form-control" disabled="disabled" placeholder="$25.000" />
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tblDevolucion').DataTable(
+            {
+                "language": dataTableEspanol,
+                "info": false,
+                "paging": false,
+                "searching": false,
+                "ordering": false,
+            });
+    });
+</script>

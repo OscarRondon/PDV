@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "InicioSesion";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#formLogin').submit(function (e) {
+            if ($("#username").val() == "") {
+                e.preventDefault();
+                Mensaje.Alerta("Debe ingresar Usuario.");
+            }
+            else if ($("#password").val() == "") {
+                e.preventDefault();
+                Mensaje.Alerta("Debe ingresar Contraseña.");
+            }
+            else {
+                mLoading.modal();
+            }
+        });
+    });
+
+</script>
+<center>
+    <form class="form-signin" method="post" action="~/Login/Index" id="formLogin" autocomplete="off">
+        <div class="panel panel-primary" style="width:45%; text-align:left">
+            <div class="panel-heading text-center">
+                <h3>Punto de Venta - Iniciar Sesión</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-6">
+                    <img src="~/Content/Imagenes/LogoHMS.jpg" />
+                </div>
+                <div class="col-sm-6">
+                    <label>Usuario</label>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" autofocus="" autocomplete="off" maxlength="12" value="@ViewBag.UserName" /><br />
+                    </div>
+                    <label>Contraseña</label>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" maxlength="30" value="" autocomplete="off" />
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="btnIngresar">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</center>
+@if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+{
+    <script>
+       Mensaje.Alerta('@ViewBag.Mensaje');
+    </script>
+}

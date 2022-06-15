@@ -1,0 +1,47 @@
+﻿@using EntidadesPDV.Usuario
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<UsuarioDV> listUsuario = (List<UsuarioDV>)ViewBag.ListadoUsuarios;
+}
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Listado de Cajas</h1>
+        </div>
+        <div class="panel-body">
+            <table id="listadoCajas" class="table table-striped table-hover table-condensed compact" style="width: 100%">
+                <thead>
+                    <tr class="bg-info">
+                        <th style="width: 1%"></th>
+                        <th>Caja</th>
+                        <th>Funcionalidad</th>
+                        <th>Función</th>
+                        <th>Sección</th>
+                        <th>Piso</th>
+                        <th>Habilitada</th>
+                        <th>Supervisor</th>
+                        <th style="width: 1%">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <div class="col-sm-12 text-right">
+                <button class="btn btn-primary btn-sm" id="AsignarMasivamente" data-toggle="modal" data-target="#modalAsignaSupervisor" title="Asignar supervisor" disabled><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Asignar Supervisor</button>
+                <button class="btn btn-primary btn-sm" id="AgregarNuevaCaja" data-toggle="modal" data-target="#modalAgregarCaja" title="Agregar nueva caja"><span class="glyphicon glyphicon-plus"></span>&nbsp;Agregar Caja</button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/Views/Shared/Caja/_PartialCrearCaja.cshtml")
+@Html.Partial("~/Views/Shared/Caja/_PartialAsignarCajaSupervisor.cshtml")
+
+@section scripts
+{
+    <script src="~/Scripts/HMS/Caja/AdministrarCajas.js"></script>
+}
